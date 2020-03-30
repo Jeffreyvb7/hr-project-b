@@ -1,0 +1,40 @@
+/Users/jeffrey/Documents/Projecten/Applicatie/bin/Debug/netcoreapp3.1/Applicatie
+/Users/jeffrey/Documents/Projecten/Applicatie/bin/Debug/netcoreapp3.1/Applicatie.deps.json
+/Users/jeffrey/Documents/Projecten/Applicatie/bin/Debug/netcoreapp3.1/Applicatie.runtimeconfig.json
+/Users/jeffrey/Documents/Projecten/Applicatie/bin/Debug/netcoreapp3.1/Applicatie.runtimeconfig.dev.json
+/Users/jeffrey/Documents/Projecten/Applicatie/bin/Debug/netcoreapp3.1/Applicatie.dll
+/Users/jeffrey/Documents/Projecten/Applicatie/bin/Debug/netcoreapp3.1/Applicatie.pdb
+/Users/jeffrey/Documents/Projecten/Applicatie/obj/Debug/netcoreapp3.1/Applicatie.csprojAssemblyReference.cache
+/Users/jeffrey/Documents/Projecten/Applicatie/obj/Debug/netcoreapp3.1/Applicatie.AssemblyInfoInputs.cache
+/Users/jeffrey/Documents/Projecten/Applicatie/obj/Debug/netcoreapp3.1/Applicatie.AssemblyInfo.cs
+/Users/jeffrey/Documents/Projecten/Applicatie/obj/Debug/netcoreapp3.1/Applicatie.dll
+/Users/jeffrey/Documents/Projecten/Applicatie/obj/Debug/netcoreapp3.1/Applicatie.pdb
+/Users/jeffrey/Documents/Projecten/Applicatie/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/Users/jeffrey/Documents/Projecten/Applicatie/obj/Debug/netcoreapp3.1/Applicatie.csproj.CopyComplete
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/bin/Debug/netcoreapp3.1/Applicatie.deps.json
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/bin/Debug/netcoreapp3.1/Applicatie.runtimeconfig.json
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/bin/Debug/netcoreapp3.1/Applicatie.runtimeconfig.dev.json
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/bin/Debug/netcoreapp3.1/Applicatie.dll
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/bin/Debug/netcoreapp3.1/Applicatie.pdb
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/obj/Debug/netcoreapp3.1/Applicatie.csprojAssemblyReference.cache
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/obj/Debug/netcoreapp3.1/Applicatie.AssemblyInfoInputs.cache
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/obj/Debug/netcoreapp3.1/Applicatie.AssemblyInfo.cs
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/obj/Debug/netcoreapp3.1/Applicatie.csproj.CopyComplete
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/obj/Debug/netcoreapp3.1/Applicatie.dll
+/Users/wesleyvanschaijk/Documents/werk/hogeschool-rotterdam/docent/1920-project-b/deliveries/eerste-oefeningen/Jeffrey van Bennekom/Applicatie (Possible Revision)/obj/Debug/netcoreapp3.1/Applicatie.pdb
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\bin\Debug\netcoreapp3.1\Applicatie.exe
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\bin\Debug\netcoreapp3.1\Applicatie.deps.json
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\bin\Debug\netcoreapp3.1\Applicatie.runtimeconfig.json
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\bin\Debug\netcoreapp3.1\Applicatie.runtimeconfig.dev.json
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\bin\Debug\netcoreapp3.1\Applicatie.dll
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\bin\Debug\netcoreapp3.1\Applicatie.pdb
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.csprojAssemblyReference.cache
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.csproj.CoreCompileInputs.cache
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.AssemblyInfoInputs.cache
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.AssemblyInfo.cs
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.csproj.CopyComplete
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.dll
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.pdb
+D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.genruntimeconfig.cache
