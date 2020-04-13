@@ -1,7 +1,8 @@
 {
-  "Name": "Test room",
-  "Theme": "Gevaarlijk",
-  "Price": 50.0,
-  "Max_duration": 120,
-  "Setup_time": 10
+  "name": "Test room",
+  "theme": "test",
+  "price": 80.0,
+  "maxPlayers": 4,
+  "maxDuration": 120,
+  "setupTime": 30
 }

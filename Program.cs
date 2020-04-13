@@ -126,21 +126,23 @@ namespace Applicatie
             // Vergeet hier je controles niet op!
             string name = AskQuestion("Enter name: ", required: true);
             string theme = AskQuestion("Enter theme: ");
-            int max_duration = int.Parse(AskQuestion("Enter max duration: ", isInt: true));
-            int setup_time = int.Parse(AskQuestion("Enter setup time: ", isInt: true));
+            int maxPlayers = int.Parse(AskQuestion("Enter max amount of players: ", isInt: true));
+            int maxDuration = int.Parse(AskQuestion("Enter max duration: ", isInt: true));
+            int setupTime = int.Parse(AskQuestion("Enter setup time: ", isInt: true));
             float price = float.Parse(AskQuestion("Enter total price: ", isFloat: true));
 
             EscapeRoom newRoom = new EscapeRoom() {
-                Name = name,
-                Theme = theme,
-                Price = price,
-                Max_duration = max_duration,
-                Setup_time = setup_time
+                name = name,
+                theme = theme,
+                price = price,
+                maxPlayers = maxPlayers,
+                maxDuration = maxDuration,
+                setupTime = setupTime
             };
 
             newRoom.Save();
             Console.WriteLine(newRoom.ToString());
-            Console.WriteLine($"Escaperoom {newRoom.Name} succesfully saved!");
+            Console.WriteLine($"Escaperoom {newRoom.name} succesfully saved!");
         }
 
         static void DeleteRoom()
