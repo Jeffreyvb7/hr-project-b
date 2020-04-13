@@ -39,6 +39,7 @@ namespace Applicatie
                         break;
                     case "d":
                         Console.WriteLine("Bookings");
+                        EscapeRoomReservation.Menu();
                         break;
                     case "-":
                         EscapeRoomMenu();

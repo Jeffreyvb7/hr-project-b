@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj": {}
+    "C:\\Users\\gebruiker\\pictures\\documents\\github\\hr-project-b\\Applicatie.csproj": {}
   },
   "projects": {
-    "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj": {
+    "C:\\Users\\gebruiker\\pictures\\documents\\github\\hr-project-b\\Applicatie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
+        "projectUniqueName": "C:\\Users\\gebruiker\\pictures\\documents\\github\\hr-project-b\\Applicatie.csproj",
         "projectName": "Applicatie",
-        "projectPath": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
-        "packagesPath": "C:\\Users\\jeffr\\.nuget\\packages\\",
-        "outputPath": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\obj\\",
+        "projectPath": "C:\\Users\\gebruiker\\pictures\\documents\\github\\hr-project-b\\Applicatie.csproj",
+        "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gebruiker\\pictures\\documents\\github\\hr-project-b\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jeffr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
