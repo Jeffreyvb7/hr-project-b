@@ -7,11 +7,12 @@ namespace Applicatie
     // Als je ooit meer wilt gaan opslaan dan kun je op deze manier dit makkelijker realiseren
     class EscapeRoom : AJsonable
     {
-        public string Name { get; set; }
-        public string Theme { get; set; }
-        public float Price { get; set; }
-        public int Max_duration { get; set; }
-        public int Setup_time { get; set; }
+        public string name { get; set; }
+        public string theme { get; set; }
+        public float price { get; set; }
+        public int maxPlayers { get; set; }
+        public int maxDuration { get; set; }
+        public int setupTime { get; set; }
 
         // Niet geimplementeerd in orgineel
         public override void Edit() {
@@ -19,17 +20,18 @@ namespace Applicatie
         }
 
         public override void Save() {
-            JsonManager.SaveData(this, this.Name);
+            JsonManager.SaveData(this, "EscapeRooms", this.name);
         }
 
         public override string ToString()
         {
             return string.Format(
-                $"\tName: {this.Name}, \n" +
-                $"\tTheme; {this.Theme}, \n" +
-                $"\tPrice: {this.Price}, \n" +
-                $"\tDuration: {this.Max_duration}, \n" +
-                $"\tSetup: {this.Setup_time}");
+                $"\tName: {this.name}, \n" +
+                $"\tTheme; {this.theme}, \n" +
+                $"\tPrice: {this.price}, \n" +
+                $"\tMax players: {this.maxPlayers}, \n" +
+                $"\tDuration: {this.maxDuration}, \n" +
+                $"\tSetup: {this.setupTime}");
         } 
     }
 }

@@ -32,7 +32,7 @@ namespace Applicatie
                     case "=":
                         return;
                     case "a":
-                        Console.WriteLine("Escape room");
+                        EscapeRoomController.ShowRooms();
                         break;
                     case "s":
                         Console.WriteLine("Menu");
@@ -65,101 +65,20 @@ namespace Applicatie
                     case "=":
                         return;
                     case "1":
-                        ShowRooms();
+                        EscapeRoomController.ShowRooms();
                         break;
 
                     case "2":
-                        CreateRoom();
+                        EscapeRoomController.CreateRoom();
                         break;
 
                     case "3":
-                        // EditRoom();
+                        EscapeRoomController.EditRoom();
                         break;
 
                     case "4":
-                        DeleteRoom();
+                        EscapeRoomController.DeleteRoom();
                         break;
-                }
-            }
-        }
-
-        static void ShowRooms()
-        {
-            // Maak gebruik van je EscapeRoom class
-            // Kun je ook schrijven als AJsonable.GetAll<EscapeRoom>()
-            List<EscapeRoom> rooms = AJsonable.GetAll<EscapeRoom>();
-
-            // Als je een teller wilt; kun je het beste gebruik maken van for
-            for(int i = 0; i < rooms.Count; i++) {
-                Console.WriteLine($"\nRoom {i}: ");
-                Console.WriteLine(rooms[i].ToString());
-            }
-        }
-
-        static string AskQuestion(string question, bool required = false, bool isFloat = false, bool isInt = false) {
-            while (true) {
-                Console.Write(question);
-                string answer = Console.ReadLine();
-
-                if (!required || answer.Any()) {
-                    try {
-                        if (isFloat) 
-                            float.Parse(answer);
-                        else if (isInt)
-                            int.Parse(answer);
-                    }
-
-                    catch {
-                        Console.WriteLine("Enter a number");
-                        continue;
-                    }
-
-                    return answer;
-                } else {
-                    Console.WriteLine("You need to answer the question");
-                }
-            }
-        }
-
-        static void CreateRoom()
-        {
-            // Vergeet hier je controles niet op!
-            string name = AskQuestion("Enter name: ", required: true);
-            string theme = AskQuestion("Enter theme: ");
-            int max_duration = int.Parse(AskQuestion("Enter max duration: ", isInt: true));
-            int setup_time = int.Parse(AskQuestion("Enter setup time: ", isInt: true));
-            float price = float.Parse(AskQuestion("Enter total price: ", isFloat: true));
-
-            EscapeRoom newRoom = new EscapeRoom() {
-                Name = name,
-                Theme = theme,
-                Price = price,
-                Max_duration = max_duration,
-                Setup_time = setup_time
-            };
-
-            newRoom.Save();
-            Console.WriteLine(newRoom.ToString());
-            Console.WriteLine($"Escaperoom {newRoom.Name} succesfully saved!");
-        }
-
-        static void DeleteRoom()
-        {
-            ShowRooms();
-
-            Console.WriteLine("Which room do you want to delete? (enter to cancel)");
-            Console.Write("Name: ");
-            string roomName = Console.ReadLine();
-
-            if(roomName == ""){
-                Console.WriteLine("Deletion canceled");
-            } else {
-                if(EscapeRoom.Delete<EscapeRoom>(roomName)) {
-                    Console.WriteLine($"Room {roomName} deleted");
-                    Console.Write("Press enter to continu...");
-                } else {
-                    Console.WriteLine("Room cannot be found");
-                    Console.Write("Press enter to continu...");
                 }
             }
         }

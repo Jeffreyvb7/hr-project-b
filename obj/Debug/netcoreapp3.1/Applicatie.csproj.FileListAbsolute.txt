@@ -38,3 +38,18 @@ D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Appli
 D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.dll
 D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.pdb
 D:\Jeffrey\Desktop\Jeffrey van Bennekom\Applicatie\obj\Debug\netcoreapp3.1\Applicatie.genruntimeconfig.cache
+D:\Jeffrey\Documents\GitHub\hr-project-b\bin\Debug\netcoreapp3.1\Applicatie.exe
+D:\Jeffrey\Documents\GitHub\hr-project-b\bin\Debug\netcoreapp3.1\Applicatie.deps.json
+D:\Jeffrey\Documents\GitHub\hr-project-b\bin\Debug\netcoreapp3.1\Applicatie.runtimeconfig.json
+D:\Jeffrey\Documents\GitHub\hr-project-b\bin\Debug\netcoreapp3.1\Applicatie.runtimeconfig.dev.json
+D:\Jeffrey\Documents\GitHub\hr-project-b\bin\Debug\netcoreapp3.1\Applicatie.dll
+D:\Jeffrey\Documents\GitHub\hr-project-b\bin\Debug\netcoreapp3.1\Applicatie.pdb
+D:\Jeffrey\Documents\GitHub\hr-project-b\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Jeffrey\Documents\GitHub\hr-project-b\obj\Debug\netcoreapp3.1\Applicatie.csprojAssemblyReference.cache
+D:\Jeffrey\Documents\GitHub\hr-project-b\obj\Debug\netcoreapp3.1\Applicatie.csproj.CoreCompileInputs.cache
+D:\Jeffrey\Documents\GitHub\hr-project-b\obj\Debug\netcoreapp3.1\Applicatie.AssemblyInfoInputs.cache
+D:\Jeffrey\Documents\GitHub\hr-project-b\obj\Debug\netcoreapp3.1\Applicatie.AssemblyInfo.cs
+D:\Jeffrey\Documents\GitHub\hr-project-b\obj\Debug\netcoreapp3.1\Applicatie.csproj.CopyComplete
+D:\Jeffrey\Documents\GitHub\hr-project-b\obj\Debug\netcoreapp3.1\Applicatie.dll
+D:\Jeffrey\Documents\GitHub\hr-project-b\obj\Debug\netcoreapp3.1\Applicatie.pdb
+D:\Jeffrey\Documents\GitHub\hr-project-b\obj\Debug\netcoreapp3.1\Applicatie.genruntimeconfig.cache

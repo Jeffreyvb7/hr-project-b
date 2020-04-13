@@ -11,13 +11,13 @@ namespace Applicatie
 
         // Deze methods kunnen vanuit elke class gebruikt worden
         // De implementatie is voor alle classes hetzelfde en op ieder moment te gebruiken
-        public static bool Delete<T>(string name) =>
-            JsonManager.DeleteData<T>(name);
+        public static bool Delete<T>(string fldrName, string name) =>
+            JsonManager.DeleteData<T>(fldrName, name);
 
-        public static T Get<T>(string name) where T : AJsonable =>
-            JsonManager.GetData<T>(name);
+        public static T Get<T>(string fldrName, string name) where T : AJsonable =>
+            JsonManager.GetData<T>(fldrName, name);
 
-        public static List<T> GetAll<T>() where T : AJsonable =>
-            JsonManager.GetAllData<T>();
+        public static List<T> GetAll<T>(string fldrName) where T : AJsonable =>
+            JsonManager.GetAllData<T>(fldrName);
     }
 }
