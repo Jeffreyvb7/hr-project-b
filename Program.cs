@@ -21,6 +21,7 @@ namespace Applicatie
                     "\ta - Show current escape rooms\n" +
                     "\ts - Show Menu\n" +
                     "\td - Book a escape room\n" +
+                    "\ti - Information about our company\n" +
                     "\t- - Escape room options (Employees only!)\n" +
                     "\t= - Exit\n" +
                     "Your option? "
@@ -42,6 +43,10 @@ namespace Applicatie
                         break;
                     case "-":
                         EscapeRoomMenu();
+                        break;
+                    case "i":
+                        Infomation.showinfo();
+                        string enterskip = Console.ReadLine();
                         break;
                 }
             }
