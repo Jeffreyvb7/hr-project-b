@@ -18,6 +18,7 @@ namespace Applicatie
             {
                 Console.Write(
                     "\n\nChoose an option from the following list:\n" +
+                    "\tl - Show login menu\n" + 
                     "\ta - Show current escape rooms\n" +
                     "\ts - Show Menu\n" +
                     "\td - Book a escape room\n" +
@@ -31,6 +32,10 @@ namespace Applicatie
                 {
                     case "=":
                         return;
+                    case "l":
+                        var login = new Login();
+                        login.Mayn();
+                        break;
                     case "a":
                         EscapeRoomController.ShowRooms();
                         break;

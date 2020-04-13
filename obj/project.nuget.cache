@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PbT0HVEbR6PNa5qpAQOGW2MWeTiqg1VIW3FKtJu0kt2yjAtoMP+/TqQ1z5aOuhpUkpCkIX0/YmI7NTwC67iQrw==",
+  "dgSpecHash": "5QYUcgvnEhXKcie1iieBxqUncMu4F7DssxP/jJ5wv9DbDBVfrZi3jUxRp+R0iLw1IsdcIntECuDBQe/Eo5ZWUQ==",
   "success": true,
-  "projectFilePath": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
+  "projectFilePath": "C:\\Users\\blockycow\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jeffr\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\blockycow\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

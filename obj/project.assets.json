@@ -52,19 +52,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jeffr\\.nuget\\packages\\": {}
+    "C:\\Users\\blockycow\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
+      "projectUniqueName": "C:\\Users\\blockycow\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
       "projectName": "Applicatie",
-      "projectPath": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
-      "packagesPath": "C:\\Users\\jeffr\\.nuget\\packages\\",
-      "outputPath": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\obj\\",
+      "projectPath": "C:\\Users\\blockycow\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
+      "packagesPath": "C:\\Users\\blockycow\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\blockycow\\Documents\\GitHub\\hr-project-b\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\jeffr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\blockycow\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -108,7 +112,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
