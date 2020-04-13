@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\Applicatie.csproj": {}
+    "C:\\Users\\mousj\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj": {}
   },
   "projects": {
-    "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\Applicatie.csproj": {
+    "C:\\Users\\mousj\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\Applicatie.csproj",
+        "projectUniqueName": "C:\\Users\\mousj\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
         "projectName": "Applicatie",
-        "projectPath": "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\Applicatie.csproj",
-        "packagesPath": "C:\\Users\\jeffr\\.nuget\\packages\\",
-        "outputPath": "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\obj\\",
+        "projectPath": "C:\\Users\\mousj\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
+        "packagesPath": "C:\\Users\\mousj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mousj\\Documents\\GitHub\\hr-project-b\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jeffr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mousj\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

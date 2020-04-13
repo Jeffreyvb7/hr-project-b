@@ -35,7 +35,7 @@ namespace Applicatie
                         Console.WriteLine("Escape room");
                         break;
                     case "s":
-                        Console.WriteLine("Menu");
+                        Menuscherm.FoodDrinkMenu();
                         break;
                     case "d":
                         Console.WriteLine("Bookings");
