@@ -7,36 +7,35 @@ namespace Applicatie
 {
     public class JsonManager
     {
-        
-        // $@"./{default(T).GetType().Name}s/";
-        private static string GetPath<T>() =>
-            $@"./EscapeRooms/";
+    
+        private static string GetPath<T>(string fldrName) =>
+            $@"./{fldrName}/";
 
-        private static string GetPath<T>(string fleName) =>
+        private static string GetPath<T>(string fldrName, string fleName) =>
             fleName.EndsWith(".json")
-                ? $@"./EscapeRooms/{fleName}"
-                : $@"./EscapeRooms/{fleName}.json";
+                ? $@"./{fldrName}/{fleName}"
+                : $@"./{fldrName}/{fleName}.json";
 
-        public static T GetData<T>(string name)
+        public static T GetData<T>(string fldrName, string name)
         {
-            string r = File.ReadAllText(GetPath<T>(name));
+            string r = File.ReadAllText(GetPath<T>(fldrName, name));
             return JsonConvert.DeserializeObject<T>(r);
         }
 
-        public static List<T> GetAllData<T>()
+        public static List<T> GetAllData<T>(string fldrName)
         {
-            DirectoryInfo directory = new DirectoryInfo(GetPath<T>());
+            DirectoryInfo directory = new DirectoryInfo(GetPath<T>(fldrName));
             FileInfo[] files = directory.GetFiles("*.json");
-            return files.Select(file => GetData<T>(file.Name)).ToList();
+            return files.Select(file => GetData<T>(fldrName, file.Name)).ToList();
         }
 
-        public static void SaveData<T>(T data, string name) {
+        public static void SaveData<T>(T data, string fldrName, string name) {
             string r = JsonConvert.SerializeObject(data, Formatting.Indented);
-            File.WriteAllText(GetPath<T>(name), r);
+            File.WriteAllText(GetPath<T>(fldrName, name), r);
         }
 
-        public static bool DeleteData<T>(string name) {
-            string path = GetPath<T>(name);
+        public static bool DeleteData<T>(string flrdName, string name) {
+            string path = GetPath<T>(flrdName, name);
 
             if (File.Exists(path)) {
                 File.Delete(path);

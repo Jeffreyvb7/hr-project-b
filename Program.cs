@@ -87,7 +87,7 @@ namespace Applicatie
         {
             // Maak gebruik van je EscapeRoom class
             // Kun je ook schrijven als AJsonable.GetAll<EscapeRoom>()
-            List<EscapeRoom> rooms = AJsonable.GetAll<EscapeRoom>();
+            List<EscapeRoom> rooms = AJsonable.GetAll<EscapeRoom>("EscapeRooms");
 
             // Als je een teller wilt; kun je het beste gebruik maken van for
             for(int i = 0; i < rooms.Count; i++) {
@@ -154,7 +154,7 @@ namespace Applicatie
             if(roomName == ""){
                 Console.WriteLine("Deletion canceled");
             } else {
-                if(EscapeRoom.Delete<EscapeRoom>(roomName)) {
+                if(EscapeRoom.Delete<EscapeRoom>("EscapeRooms", roomName)) {
                     Console.WriteLine($"Room {roomName} deleted");
                     Console.Write("Press enter to continu...");
                 } else {

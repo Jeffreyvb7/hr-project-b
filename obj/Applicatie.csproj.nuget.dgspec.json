@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\Applicatie.csproj": {}
+    "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj": {}
   },
   "projects": {
-    "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\Applicatie.csproj": {
+    "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\Applicatie.csproj",
+        "projectUniqueName": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
         "projectName": "Applicatie",
-        "projectPath": "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\Applicatie.csproj",
+        "projectPath": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
         "packagesPath": "C:\\Users\\jeffr\\.nuget\\packages\\",
-        "outputPath": "D:\\Jeffrey\\Desktop\\Jeffrey van Bennekom\\Applicatie\\obj\\",
+        "outputPath": "D:\\Jeffrey\\Documents\\GitHub\\hr-project-b\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jeffr\\AppData\\Roaming\\NuGet\\NuGet.Config",

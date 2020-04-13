@@ -19,7 +19,7 @@ namespace Applicatie
         }
 
         public override void Save() {
-            JsonManager.SaveData(this, this.Name);
+            JsonManager.SaveData(this, "EscapeRooms", this.Name);
         }
 
         public override string ToString()
