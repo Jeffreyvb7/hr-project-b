@@ -9,6 +9,8 @@
 
 #CUSTOM IGNORE RULES
 EscapeRooms/*
+bin
+obj
 
 # User-specific files
 *.suo
