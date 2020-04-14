@@ -9,6 +9,7 @@
 
 #CUSTOM IGNORE RULES
 EscapeRooms/*
+!EscapeRooms/Test Room.json
 bin
 obj
 
