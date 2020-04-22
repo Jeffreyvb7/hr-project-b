@@ -104,10 +104,10 @@ namespace Applicatie
 
                 string name = AskQuestion($"(current = {room.Name}) Enter new name: ");
                 string theme = AskQuestion($"(current = {room.Theme}) Enter new theme: ");
-                int maxPlayers = int.Parse(AskQuestion($"(current = {room.MaxPlayers}) Enter new max amount of players: ", isInt: true));
-                int maxDuration = int.Parse(AskQuestion($"(current = {room.MaxDuration}) Enter new max duration: ", isInt: true));
-                int setupTime = int.Parse(AskQuestion($"(current = {room.SetupTime}) Enter new setup time: ", isInt: true));
-                float price = float.Parse(AskQuestion($"(current = {room.Price}) Enter new total price: ", isFloat: true));
+                int maxPlayers = int.Parse(AskQuestion($"(current = {room.MaxPlayers}) Enter new max amount of players: "));
+                int maxDuration = int.Parse(AskQuestion($"(current = {room.MaxDuration}) Enter new max duration: "));
+                int setupTime = int.Parse(AskQuestion($"(current = {room.SetupTime}) Enter new setup time: "));
+                float price = float.Parse(AskQuestion($"(current = {room.Price}) Enter new total price: "));
 
                 EscapeRoom.Delete<EscapeRoom>("EscapeRooms", roomName);
                 var newRoom = new EscapeRoom()
