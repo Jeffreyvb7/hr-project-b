@@ -8,34 +8,34 @@ namespace Applicatie
     public class JsonManager
     {
     
-        private static string GetPath<T>(string fldrName) =>
-            $@"./{fldrName}/";
+        private static string GetPath<T>(string folderName) =>
+            $@"./{folderName}/";
 
-        private static string GetPath<T>(string fldrName, string fleName) =>
-            fleName.EndsWith(".json")
-                ? $@"./{fldrName}/{fleName}"
-                : $@"./{fldrName}/{fleName}.json";
+        private static string GetPath<T>(string folderName, string fileName) =>
+            fileName.EndsWith(".json")
+                ? $@"./{folderName}/{fileName}"
+                : $@"./{folderName}/{fileName}.json";
 
-        public static T GetData<T>(string fldrName, string name)
+        public static T GetData<T>(string folderName, string fileName)
         {
-            string r = File.ReadAllText(GetPath<T>(fldrName, name));
-            return JsonConvert.DeserializeObject<T>(r);
+            string jsonData = File.ReadAllText(GetPath<T>(folderName, fileName));
+            return JsonConvert.DeserializeObject<T>(jsonData);
         }
 
-        public static List<T> GetAllData<T>(string fldrName)
+        public static List<T> GetAllData<T>(string folderName)
         {
-            DirectoryInfo directory = new DirectoryInfo(GetPath<T>(fldrName));
+            DirectoryInfo directory = new DirectoryInfo(GetPath<T>(folderName));
             FileInfo[] files = directory.GetFiles("*.json");
-            return files.Select(file => GetData<T>(fldrName, file.Name)).ToList();
+            return files.Select(file => GetData<T>(folderName, file.Name)).ToList();
         }
 
-        public static void SaveData<T>(T data, string fldrName, string name) {
-            string r = JsonConvert.SerializeObject(data, Formatting.Indented);
-            File.WriteAllText(GetPath<T>(fldrName, name), r);
+        public static void SaveData<T>(T data, string folderName, string fileName) {
+            string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
+            File.WriteAllText(GetPath<T>(folderName, fileName), jsonData);
         }
 
-        public static bool DeleteData<T>(string flrdName, string name) {
-            string path = GetPath<T>(flrdName, name);
+        public static bool DeleteData<T>(string folderName, string fileName) {
+            string path = GetPath<T>(folderName, fileName);
 
             if (File.Exists(path)) {
                 File.Delete(path);
