@@ -11,7 +11,7 @@ namespace Applicatie
         private static string GetPath<T>(string folderName) =>
             $@"./{folderName}/";
 
-        private static string GetPath<T>(string folderName, string fileName) =>
+        public static string GetPath<T>(string folderName, string fileName) =>
             fileName.EndsWith(".json")
                 ? $@"./{folderName}/{fileName}"
                 : $@"./{folderName}/{fileName}.json";

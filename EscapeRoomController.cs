@@ -1,6 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+
 
 namespace Applicatie
 {
@@ -89,40 +90,51 @@ namespace Applicatie
             Console.WriteLine("Edit rooms: ");
 
             ShowRooms();
-
-            Console.WriteLine("Which room do you want to Edit? (enter to cancel)");
-            Console.Write("Name: ");
-            string roomName = Console.ReadLine();
-
-            if (roomName == "")
+            bool isDone = false;
+            while (!isDone)
             {
-                Console.WriteLine("Edit canceled");
-            }
-            else
-            {
-                var room = AJsonable.Get<EscapeRoom>("EscapeRooms", roomName);
 
-                string name = AskQuestion($"(current = {room.Name}) Enter new name: ");
-                string theme = AskQuestion($"(current = {room.Theme}) Enter new theme: ");
-                int maxPlayers = int.Parse(AskQuestion($"(current = {room.MaxPlayers}) Enter new max amount of players: "));
-                int maxDuration = int.Parse(AskQuestion($"(current = {room.MaxDuration}) Enter new max duration: "));
-                int setupTime = int.Parse(AskQuestion($"(current = {room.SetupTime}) Enter new setup time: "));
-                float price = float.Parse(AskQuestion($"(current = {room.Price}) Enter new total price: "));
+                Console.WriteLine("Which room do you want to Edit? (enter to cancel)");
+                Console.Write("Name: ");
+                string roomName = Console.ReadLine();
+                string roomNamePath = AJsonable.GetPath("EscapeRooms", roomName);
 
-                EscapeRoom.Delete<EscapeRoom>("EscapeRooms", roomName);
-                var newRoom = new EscapeRoom()
+                if (!string.IsNullOrEmpty(roomName))
                 {
-                    Name = name,
-                    Theme = theme,
-                    Price = price,
-                    MaxPlayers = maxPlayers,
-                    MaxDuration = maxDuration,
-                    SetupTime = setupTime
-                };
+                    Console.WriteLine($"{roomName} does not exist.");
+                }
+                else if (!File.Exists(roomNamePath))
+                {
+                    Console.WriteLine("Editing canceled");
+                    isDone = true;
+                }
+                else
+                {
+                    var room = AJsonable.Get<EscapeRoom>("EscapeRooms", roomName);
 
-                newRoom.Save();
-                Console.WriteLine(newRoom.ToString());
-                Console.WriteLine($"Escaperoom {newRoom.Name} succesfully edited!");
+                    string name = AskQuestion($"(current = {room.Name}) Enter new name: ");
+                    string theme = AskQuestion($"(current = {room.Theme}) Enter new theme: ");
+                    int maxPlayers = int.Parse(AskQuestion($"(current = {room.MaxPlayers}) Enter new max amount of players: ", isInt: true));
+                    int maxDuration = int.Parse(AskQuestion($"(current = {room.MaxDuration}) Enter new max duration: ", isInt: true));
+                    int setupTime = int.Parse(AskQuestion($"(current = {room.SetupTime}) Enter new setup time: ", isInt: true));
+                    float price = float.Parse(AskQuestion($"(current = {room.Price}) Enter new total price: ", isFloat: true));
+
+                    EscapeRoom.Delete<EscapeRoom>("EscapeRooms", roomName);
+                    var newRoom = new EscapeRoom()
+                    {
+                        Name = name,
+                        Theme = theme,
+                        Price = price,
+                        MaxPlayers = maxPlayers,
+                        MaxDuration = maxDuration,
+                        SetupTime = setupTime
+                    };
+
+                    newRoom.Save();
+                    Console.WriteLine(newRoom.ToString());
+                    Console.WriteLine($"Escaperoom {newRoom.Name} succesfully edited!");
+                    isDone = true;
+                }
             }
         }
         public static void DeleteRoom()

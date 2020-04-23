@@ -11,13 +11,16 @@ namespace Applicatie
 
         // Deze methods kunnen vanuit elke class gebruikt worden
         // De implementatie is voor alle classes hetzelfde en op ieder moment te gebruiken
-        public static bool Delete<T>(string fldrName, string name) =>
-            JsonManager.DeleteData<T>(fldrName, name);
+        public static bool Delete<T>(string folderName, string fileName) =>
+            JsonManager.DeleteData<T>(folderName, fileName);
 
-        public static T Get<T>(string fldrName, string name) where T : AJsonable =>
-            JsonManager.GetData<T>(fldrName, name);
+        public static T Get<T>(string folderName, string fileName) where T : AJsonable =>
+            JsonManager.GetData<T>(folderName, fileName);
 
-        public static List<T> GetAll<T>(string fldrName) where T : AJsonable =>
-            JsonManager.GetAllData<T>(fldrName);
+        public static List<T> GetAll<T>(string folderName) where T : AJsonable =>
+            JsonManager.GetAllData<T>(folderName);
+
+        public static string GetPath(string folderName, string fileName) =>
+            JsonManager.GetPath<string>(folderName, fileName);
     }
 }
