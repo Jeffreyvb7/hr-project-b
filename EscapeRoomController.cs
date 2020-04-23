@@ -98,25 +98,27 @@ namespace Applicatie
                 Console.Write("Name: ");
                 string roomName = Console.ReadLine();
                 string roomNamePath = AJsonable.GetPath("EscapeRooms", roomName);
+                bool escapeRoomExists = File.Exists(roomNamePath);
+                Console.WriteLine(escapeRoomExists);
 
-                if (!string.IsNullOrEmpty(roomName))
-                {
-                    Console.WriteLine($"{roomName} does not exist.");
-                }
-                else if (!File.Exists(roomNamePath))
+                if (String.IsNullOrEmpty(roomName))
                 {
                     Console.WriteLine("Editing canceled");
                     isDone = true;
                 }
-                else
+                else if (!escapeRoomExists)
+                {
+                    Console.WriteLine($"{roomName} does not exist.");
+                }
+                else if (escapeRoomExists)
                 {
                     var room = AJsonable.Get<EscapeRoom>("EscapeRooms", roomName);
 
                     string name = AskQuestion($"(current = {room.Name}) Enter new name: ");
                     string theme = AskQuestion($"(current = {room.Theme}) Enter new theme: ");
-                    int maxPlayers = int.Parse(AskQuestion($"(current = {room.MaxPlayers}) Enter new max amount of players: ", isInt: true));
-                    int maxDuration = int.Parse(AskQuestion($"(current = {room.MaxDuration}) Enter new max duration: ", isInt: true));
-                    int setupTime = int.Parse(AskQuestion($"(current = {room.SetupTime}) Enter new setup time: ", isInt: true));
+                    int maxPlayers = Int32.Parse(AskQuestion($"(current = {room.MaxPlayers}) Enter new max amount of players: ", isInt: true));
+                    int maxDuration = Int32.Parse(AskQuestion($"(current = {room.MaxDuration}) Enter new max duration: ", isInt: true));
+                    int setupTime = Int32.Parse(AskQuestion($"(current = {room.SetupTime}) Enter new setup time: ", isInt: true));
                     float price = float.Parse(AskQuestion($"(current = {room.Price}) Enter new total price: ", isFloat: true));
 
                     EscapeRoom.Delete<EscapeRoom>("EscapeRooms", roomName);
