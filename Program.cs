@@ -13,7 +13,7 @@ namespace Applicatie
 
         static void Menu()
         {
-            Console.WriteLine("Welcome to Escap, The place to visit for your escape room needs");
+            Console.WriteLine("Welcome to Escape, The place to visit for your escape room needs");
             while (true)
             {
                 Console.Write(
