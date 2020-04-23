@@ -62,6 +62,7 @@ namespace Applicatie
         public static void CreateRoom()
         {
             // Vergeet hier je controles niet op!
+            Console.WriteLine("Creating new room: ");
             string name = AskQuestion("Enter name: ", required: true);
             string theme = AskQuestion("Enter theme: ", required: true);
             int maxPlayers = int.Parse(AskQuestion("Enter max amount of players: ", isInt: true));
@@ -86,10 +87,13 @@ namespace Applicatie
 
         public static void EditRoom()
         {
+            Console.WriteLine("Edit rooms: ");
+
             ShowRooms();
             bool isDone = false;
             while (!isDone)
             {
+
                 Console.WriteLine("Which room do you want to Edit? (enter to cancel)");
                 Console.Write("Name: ");
                 string roomName = Console.ReadLine();
@@ -135,6 +139,7 @@ namespace Applicatie
         }
         public static void DeleteRoom()
         {
+            Console.WriteLine("Deleting room: ");
             ShowRooms();
 
             Console.WriteLine("Which room do you want to delete? (enter to cancel)");
@@ -150,14 +155,11 @@ namespace Applicatie
                 if (EscapeRoom.Delete<EscapeRoom>("EscapeRooms", roomName))
                 {
                     Console.WriteLine($"Room {roomName} deleted");
-                    Console.Write("Press enter to continu...");
-                    Console.ReadLine();
+
                 }
                 else
                 {
                     Console.WriteLine("Room cannot be found");
-                    Console.Write("Press enter to continu...");
-                    Console.ReadLine();
                 }
             }
         }

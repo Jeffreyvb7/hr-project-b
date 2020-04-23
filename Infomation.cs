@@ -17,8 +17,7 @@ namespace Applicatie
             "Facebook: 420 Inch Spacebarz\n" +
             "E-mail: 420inchspacebarz@hotmail.com\n" +
             "Phone number: 0612345678\n\n" +
-            "====================\n" +
-            "Please press enter to return to the menu"
+            "====================\n"
             );
         }
 
