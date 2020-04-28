@@ -13,14 +13,16 @@ namespace Applicatie
 
         static void Menu()
         {
-            Console.WriteLine("Welcome to Escap, The place to visit for your escape room needs");
             while (true)
             {
+                Console.Clear();
+                Console.WriteLine("Welcome to Escap, The place to visit for your escape room needs");
                 Console.Write(
                     "\n\nChoose an option from the following list:\n" +
-                    "\ta - Show current escape rooms\n" +
-                    "\ts - Show Menu\n" +
-                    "\td - Book a escape room\n" +
+                    "\t1 - Show current escape rooms\n" +
+                    "\t2 - Show Menu\n" +
+                    "\t3 - Book a escape room\n" +
+                    "\t4 - Information about our company\n" +
                     "\t- - Escape room options (Employees only!)\n" +
                     "\t= - Exit\n" +
                     "Your option? "
@@ -31,17 +33,28 @@ namespace Applicatie
                 {
                     case "=":
                         return;
-                    case "a":
+                    case "1":
+                        Console.Clear();
                         EscapeRoomController.ShowRooms();
+                        AnythingToContinue();
                         break;
-                    case "s":
-                        Console.WriteLine("Menu");
+                    case "2":
+                        Console.Clear();
+                        Menuscherm.FoodDrinkMenu();
+                        AnythingToContinue();
                         break;
-                    case "d":
-                        Console.WriteLine("Bookings");
-                        EscapeRoomReservation.Menu();
+                    case "3":
+                        Console.Clear();
+                        EscapeRoomReservation.Menu();;
+                        AnythingToContinue();
+                        break;
+                    case "4":
+                        Console.Clear();
+                        Infomation.showinfo();
+                        AnythingToContinue();
                         break;
                     case "-":
+                        Console.Clear();
                         EscapeRoomMenu();
                         break;
                 }
@@ -51,6 +64,7 @@ namespace Applicatie
         {
             while (true)
             {
+                Console.Clear();
                 Console.Write(
                     "\n\nEscape room options:\n" +
                     "\t1 - Show list of escape rooms\n" +
@@ -66,22 +80,36 @@ namespace Applicatie
                     case "=":
                         return;
                     case "1":
+                        Console.Clear();
                         EscapeRoomController.ShowRooms();
+                        AnythingToContinue();
                         break;
 
                     case "2":
+                        Console.Clear();
                         EscapeRoomController.CreateRoom();
+                        AnythingToContinue();
                         break;
 
                     case "3":
+                        Console.Clear();
                         EscapeRoomController.EditRoom();
+                        AnythingToContinue();
                         break;
 
                     case "4":
+                        Console.Clear();
                         EscapeRoomController.DeleteRoom();
+                        AnythingToContinue();
                         break;
                 }
             }
+        }
+
+        static void AnythingToContinue()
+        {
+            Console.Write("\nPress anything to continu...");
+            Console.ReadLine();
         }
     }
 }

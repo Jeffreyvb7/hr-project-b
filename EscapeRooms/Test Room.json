@@ -1,0 +1,8 @@
+{
+  "name": "Test Room",
+  "theme": "Test Theme",
+  "price": 40.0,
+  "maxPlayers": 4,
+  "maxDuration": 120,
+  "setupTime": 30
+}
