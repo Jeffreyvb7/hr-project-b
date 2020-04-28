@@ -1,46 +1,77 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading;
 
 namespace Applicatie{
 
     //Menu
     class EscapeRoomReservation {
 
+
         public static void Menu(){
-            List<EscapeRoom> rooms = AJsonable.GetAll<EscapeRoom>("EscapeRooms");
-            while (true){
-                EscapeRoomController.ShowRooms();
-                //Nog niet af
-            }
+            //Work in progress
+            var listOfCalenders = new CalenderList();
+
+
+            var room = RoomPicker();
+            Console.WriteLine(room.name);
+            int numPlayers = NumberOfPlayers(room.maxPlayers);
+            int hoeLaat = tijd();
         }
 
-//        public EscapeRoom RoomPicker(){
-//            Console.WriteLine("Enter the name of the room you'd like to pick");
-//            Console.ReadLine();
-//        }
+        //Functie die alle escaperooms uitprint, en vervolgens jouw de keus geeft om er een te kiezen
+        public static EscapeRoom RoomPicker(){
+            var rooms = AJsonable.GetAll<EscapeRoom>("EscapeRooms");
+            while (true){
+                EscapeRoomController.ShowRooms();
+                int x = MenuOptions("Pick the number of the room you want to choose\n", rooms.Count-1);
+                Thread.Sleep(1000);
+                Console.WriteLine("You picked the following room:\n");
+                Console.WriteLine(rooms[x]);
+                Console.WriteLine("\n");
+                Thread.Sleep(1000);
+                Console.WriteLine("Is your choice correct?");
+                if (MenuOptions("\n\n1. Yes\n2.No", 2) == 1) {
+                    return rooms[x];
+                }
+        }
+    }
 
+
+
+        //Pakt een string als instructie. Returnt het menu item.
+        public static int MenuOptions(string text, int range, int minRange = 0) {
+            int x;
+            while (true) {
+                Console.WriteLine(text);
+                x = int.Parse(Console.ReadLine());
+                if (x > range) {
+                    Console.WriteLine("\nInvalid option. Try again\n");
+                    Thread.Sleep(1000);
+                } else {
+                    return x;
+                }
+            }
+        }
         
         //Pakt de hoeveelheid spelers
-        public int NumberOfPlayers(){
+        public static int NumberOfPlayers(int maxPlayers){
             int x;
-            Console.WriteLine("How many people will you bring along?");
-            x = int.Parse(Console.ReadLine());
-            return x;
+            x = MenuOptions("\nHow many players will you bring along?\n", maxPlayers+1);
+            return x;           
         }
 
         //Pakt de tijd van een gebruiker en convert dit tot minuten
-        public int tijd(){
+        public static int tijd(){
             int x;
             int y;
-            Console.WriteLine("Within two steps you will specify the hour and minute on which you'd like to reserve\n\nPlease specify at which hour you want (9:00-17:00)");
-            x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Now please specify at which minute");
-            y = int.Parse(Console.ReadLine());
+            x = MenuOptions("Within two steps you will specify the hour and minute on which you'd like to reserve\n\nPlease specify at which hour you want (9:00-17:00)", 16, 9);
+            y = MenuOptions("Now please specify at which minute", 59, 0);
             return TijdConverter(x, y);
         }
-
-        public int TijdConverter(int h, int m){
+        //wordt gebruikt in de tijd functie om een aantal minuten te returnen
+        public static int TijdConverter(int h, int m){
             return m + h*60;
             }
         }
@@ -107,7 +138,6 @@ namespace Applicatie{
                 return false;
             }
         }
-
     }
 
     //class voor 'x' aantal dagen calender op één kamer.
@@ -123,9 +153,26 @@ namespace Applicatie{
                 this.calender[i] = new DaySchedule(room);
                 }
             }
+        
+        public static void BookedFullPrint() {
+            public bool full;
+            for (int i = 0; i < this.maxDays; i++) {
+                if (this.DaySchedule[i].filled == true) {
+                    Console.WriteLine("Day #" + ToString(i+1) + " is full");
+                } else {
+                    Console.WriteLine("Day #" + ToString(i+1) + " is not full");
+                }
+            }
+        }
+        }
 
-
+    class CalenderList {
+        public List<Calender> listOfRoomCalenders;
+        public CalenderList(){
+            for (int i = 0;  i < AJsonable.GetAll<EscapeRoom>("EscapeRooms").Count; i++) {
+            listOfRoomCalenders.Add(new Calender(AJsonable.GetAll<EscapeRoom>("EscapeRooms")[i].name, AJsonable.GetAll<EscapeRoom>("EscapeRooms")[i]));
         }
     }
-
+    }
+}
 
