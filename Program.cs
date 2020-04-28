@@ -45,7 +45,7 @@ namespace Applicatie
                         EscapeRoomMenu();
                         break;
                     case "i":
-                        Infomation.showinfo();
+                        Information.showinfo();
                         string enterskip = Console.ReadLine();
                         break;
                 }

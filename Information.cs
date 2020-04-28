@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Applicatie
 {
-    class Infomation
+    class Information
     {
         public static void showinfo()
         {
