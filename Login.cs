@@ -6,10 +6,10 @@ namespace Applicatie
     class Login {
         public string path = Directory.GetCurrentDirectory();
         
-        public void Mayn() {  
+        public void StartLogin() {  
             if (!Directory.Exists(Directory.GetCurrentDirectory() + "\\users\\")){
-            DirectoryInfo di = Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\users\\");  
-            di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
+            DirectoryInfo usersDir = Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\users\\");  
+            usersDir.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
             }         
             var menu = new Login();
             menu.LoginMenu();
@@ -42,19 +42,17 @@ namespace Applicatie
                 LogIn();   
             }
             else{
-                using (StreamReader sr = new StreamReader(File.Open(path +"\\users\\" + enteredUsername + ".txt", FileMode.Open))) {
-                    username = sr.ReadLine();
-                    password = sr.ReadLine();
+                using (StreamReader ReadUser = new StreamReader(File.Open(path +"\\users\\" + enteredUsername + ".txt", FileMode.Open))) {
+                    username = ReadUser.ReadLine();
+                    password = ReadUser.ReadLine();
                     sr.Close();
                 }
                 if (enteredUsername == username && enteredPassword == password) { 
                     Console.WriteLine("Login success");
                     Console.ReadLine();
                     LoggingIn();
-            }
-            }
-
-         
+                }
+            }         
         } 
 
         void Register(){
@@ -68,10 +66,10 @@ namespace Applicatie
                 Console.Write("Enter password: ");
                 newPassword = Console.ReadLine();
             
-                using (StreamWriter sw = new StreamWriter(File.Create(path +"\\users\\" + newUsername + ".txt"))){
-                    sw.WriteLine(newUsername);
-                    sw.WriteLine(newPassword);
-                    sw.Close();
+                using (StreamWriter CreateUser = new StreamWriter(File.Create(path +"\\users\\" + newUsername + ".txt"))){
+                    CreateUser.WriteLine(newUsername);
+                    CreateUser.WriteLine(newPassword);
+                    CreateUser.Close();
                 }
             }
             else{
@@ -82,10 +80,6 @@ namespace Applicatie
             Console.WriteLine("done");
             Console.ReadLine();
             LoginMenu();
-        }
-
-        void LoggingIn(){
-            
         }
     }
 }

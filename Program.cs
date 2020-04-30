@@ -33,8 +33,7 @@ namespace Applicatie
                     case "=":
                         return;
                     case "l":
-                        var login = new Login();
-                        login.Mayn();
+                        Login.StartLogin();                        
                         break;
                     case "a":
                         EscapeRoomController.ShowRooms();
