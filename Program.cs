@@ -15,7 +15,7 @@ namespace Applicatie
         {
             while (true)
             {
-                Console.Clear();
+                //Console.Clear();
                 Console.WriteLine("Welcome to Escap, The place to visit for your escape room needs");
                 Console.Write(
                     "\n\nChoose an option from the following list:\n" +

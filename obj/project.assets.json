@@ -57,11 +57,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gebruiker\\pictures\\documents\\github\\hr-project-b\\Applicatie.csproj",
+      "projectUniqueName": "C:\\Users\\Gebruiker\\Pictures\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
       "projectName": "Applicatie",
-      "projectPath": "C:\\Users\\gebruiker\\pictures\\documents\\github\\hr-project-b\\Applicatie.csproj",
+      "projectPath": "C:\\Users\\Gebruiker\\Pictures\\Documents\\GitHub\\hr-project-b\\Applicatie.csproj",
       "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gebruiker\\pictures\\documents\\github\\hr-project-b\\obj\\",
+      "outputPath": "C:\\Users\\Gebruiker\\Pictures\\Documents\\GitHub\\hr-project-b\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -108,7 +108,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
