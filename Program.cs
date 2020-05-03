@@ -45,7 +45,7 @@ namespace Applicatie
                         break;
                     case "3":
                         Console.Clear();
-                        Console.WriteLine("Bookings");
+                        EscapeRoomReservation.Menu();;
                         AnythingToContinue();
                         break;
                     case "4":
