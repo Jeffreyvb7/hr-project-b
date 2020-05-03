@@ -56,12 +56,12 @@ namespace Applicatie{
                 string telephone = Console.ReadLine(); 
                 Console.Clear();
 
-                Console.WriteLine("Is the following info correct?\n\n");
-                Console.WriteLine("Name: " + lastName + "\nTelephone: " + telephone);
-                Console.WriteLine("Time: " + tijdAndersom(hoeLaat));
-                Console.WriteLine("Room: " + room.Name);
-                Console.WriteLine("Days from now: " + dag);
-                Console.WriteLine("How many people: " + numPlayers);
+                Console.WriteLine("Is the following info correct?\n\n" +
+                "Name: " + lastName + "\nTelephone: " + telephone +
+                "\nTime: " + tijdAndersom(hoeLaat) +
+                "\nRoom: " + room.Name +
+                "\nDays from now: " + dag +
+                "\nHow many people: " + numPlayers);
 
                 if (MenuOptions("1. Yes\n2. No", 2) == 1) {
 
