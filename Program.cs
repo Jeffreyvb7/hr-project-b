@@ -57,6 +57,10 @@ namespace Applicatie
                         Console.Clear();
                         EscapeRoomMenu();
                         break;
+                    case "i":
+                        Information.showinfo();
+                        string enterskip = Console.ReadLine();
+                        break;
                 }
             }
         }
