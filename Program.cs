@@ -8,6 +8,14 @@ namespace Applicatie
     {
         static void Main(string[] args)
         {
+            LoggingIn();
+        }
+
+        static void  LogginIn()
+        {
+            Console.Clear();
+            Login.LoginMenu();
+            AnythingToContinue();
             Menu();
         }
 
