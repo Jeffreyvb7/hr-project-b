@@ -23,9 +23,28 @@ namespace Applicatie{
             } else {
                 listOfCalenders = JsonManager.GetData<List<Calender>>("Calender", "Calender");
             }
-            BookRoom(listOfCalenders);
+
+            Console.WriteLine("1. Book room\n2. Check bookings");
+            string option = Console.ReadLine();
+            if (option == "1"){
+                BookRoom(listOfCalenders);
+            }  else if (option == "2") {
+                checkBookings(listOfCalenders);
+            }
 
 
+        }
+
+        public static void checkBookings(List<Calender> list) {
+            int dag = MenuOptions("How many days from now are we checking?", 31, 0);
+            for (int roomIndex = 0; roomIndex < list.Count; roomIndex ++) {
+                Console.WriteLine(".");
+                Console.WriteLine("Room " + list[roomIndex].roomName + "\n\n");
+                list[roomIndex].calender[dag].showSchedule();
+
+            }
+
+            
         }
 
         public static void BookRoom(List<Calender> chosenList){
@@ -208,10 +227,12 @@ namespace Applicatie{
 
         public void showSchedule(){
             Console.Clear();
-            Console.WriteLine("On this day, we have " + this.schedule.Count + " reservations:\n");
+            Console.WriteLine("Room: " + this.room.Name + "\nOn this day, we have " + this.schedule.Count + " reservations:\n");
             for (int i = 0; i < this.schedule.Count; i++) {
                 Console.WriteLine("[" + i + "]:     " + EscapeRoomReservation.tijdAndersom(schedule[i].time) + " - " + EscapeRoomReservation.tijdAndersom(schedule[i].EndTime));
-            }
+            }   
+                Console.WriteLine("\nPress anthing to continue...");
+                Console.ReadLine();
         }
 
         //Checkt of er overlap is tussen de tijden van de twee boekingen
