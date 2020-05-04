@@ -9,16 +9,25 @@ namespace Applicatie
         public static void showinfo()
         {
             // hier komen alle details over ons bedrijf
+            string companyName = "420 Inch Spacebarz";
+            string companyInfo = "We make Escape Rooms for everyone who enjoys puzzling and problem solving!";
+            string twitterInfo = "@420inchspacebarz";
+            string facebookInfo = "420 Inch Spacebarz";
+            string emailInfo = "420inchspacebarz@hotmail.com";
+            string phoneNum = "0612345678";
+            string location = "Wijnhaven 107  3011 WN";
+
+            // hier wordt alles geprint naar console
             Console.WriteLine("======================================" +
             "\nAlle informatie over het bedrijf: \n\n" +
-            "420 Inch Spacebarz\n" +
-            "We make Escape Rooms for everyone who enjoys puzzling and problem solving!\n\n" + 
+            $"{companyName}\n" +
+            $"{companyInfo}\n\n" + 
             "if you have a question, you can always contact us through:\n" +
-            "Twitter: @420inchspacebarz\n" +
-            "Facebook: 420 Inch Spacebarz\n" +
-            "E-mail: 420inchspacebarz@hotmail.com\n" +
-            "Phone number: 0612345678\n" +
-            "Location: Wijnhaven 107  3011 WN\n" +
+            $"Twitter: {twitterInfo}\n" +
+            $"Facebook: {facebookInfo}\n" +
+            $"E-mail: {emailInfo}\n" +
+            $"Phone number: {phoneNum}\n" +
+            $"Location: {location}\n" +
             "======================================\n" +
             "Please press enter to return to the menu"
             );
