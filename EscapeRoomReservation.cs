@@ -129,10 +129,23 @@ namespace Applicatie{
 
         //Pakt een string als instructie. Returnt het menu item.
         public static int MenuOptions(string text, int range, int minRange = 0) {
+            string answer;
             int x;
             while (true) {
                 Console.WriteLine(text);
-                x = int.Parse(Console.ReadLine());
+
+                answer = Console.ReadLine();
+                try
+                {
+                    x = int.Parse(answer);
+                }
+                catch {
+                    Console.WriteLine("\nInvalid input, try again\n");
+                    Thread.Sleep(1000);
+                    Console.Clear();
+                    continue;
+                }
+
                 if (x > range || x < minRange) {
                     Console.WriteLine("\nInvalid option. Try again\n");
                     Thread.Sleep(1000);
