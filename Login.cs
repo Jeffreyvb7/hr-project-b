@@ -18,10 +18,11 @@ namespace Applicatie
             menu.LoginMenu();
         }
 
-        void LoginMenu()
+        public void LoginMenu()
         {
             string choice = "";
 
+            Console.WriteLine("Please Choose one of the following options to continue...\n");
             Console.WriteLine("1.Login");
             Console.WriteLine("2.Register");
             choice = Console.ReadLine();
@@ -35,7 +36,7 @@ namespace Applicatie
             }
         }
 
-        void LogIn()
+        public void LogIn()
         {
             string enteredUsername, enteredPassword, username, password = string.Empty;
             Console.WriteLine("LOGIN");
@@ -54,18 +55,16 @@ namespace Applicatie
                 using (StreamReader ReadUser = new StreamReader(File.Open(path +"\\users\\" + enteredUsername + ".txt", FileMode.Open))) {
                     username = ReadUser.ReadLine();
                     password = ReadUser.ReadLine();
-                    sr.Close();
+                    ReadUser.Close();
             }
                 if ((enteredUsername == username && enteredPassword == password) || (enteredUsername == "admin" && enteredPassword == "admin")) 
                 { 
                     Console.WriteLine("Login success");
-                    Console.ReadLine();
-                    Program.Menu();
                 }
             }         
         } 
 
-        void Register()
+        public void Register()
         {
             string authUsername, authPassword, newUsername, newPassword = string.Empty;
 
@@ -76,11 +75,11 @@ namespace Applicatie
             authUsername = Console.ReadLine();
             Console.Write("Enter password: ");
             authPassword = Console.ReadLine();
-            if(authUsername && authPassword == "admin") 
+            if((authUsername == "admin") && (authPassword == "admin")) 
             {
                 Console.WriteLine("Authentication succesfull, register new user: ");
             }
-            
+            Console.WriteLine("\nRegister new user");
             Console.Write("Enter username: ");
             newUsername = Console.ReadLine();
             if (!File.Exists(path +"\\users\\" + newUsername + ".txt"))

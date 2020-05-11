@@ -6,20 +6,22 @@ namespace Applicatie
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             LoggingIn();
         }
 
-        static void  LogginIn()
+        public static void LoggingIn()
         {
+            var login = new Login();
+            
             Console.Clear();
-            Login.LoginMenu();
+            login.LoginMenu();
             AnythingToContinue();
             Menu();
         }
 
-        static void Menu()
+        public static void Menu()
         {
             while (true)
             {
