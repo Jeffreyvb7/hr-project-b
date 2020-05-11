@@ -61,6 +61,13 @@ namespace Applicatie
                 { 
                     Console.WriteLine("Login success");
                 }
+                else
+                {
+                    Console.WriteLine("Login failed");
+                    Console.WriteLine("Back to login menu");
+                    Console.ReadLine();
+                    LoginMenu();
+                }
             }         
         } 
 
