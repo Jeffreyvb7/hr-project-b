@@ -7,6 +7,7 @@ namespace Applicatie
     // Als je ooit meer wilt gaan opslaan dan kun je op deze manier dit makkelijker realiseren
     class EscapeRoom : AJsonable
     {
+        public string ID { get; set; }
         public string Name { get; set; }
         public string Theme { get; set; }
         public float Price { get; set; }

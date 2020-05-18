@@ -230,3 +230,16 @@ project.lock.json
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
+*.dll
+bin/Debug/netcoreapp3.1/Applicatie.dll
+bin/Debug/netcoreapp3.1/Applicatie.dll
+bin/Debug/netcoreapp3.1/Applicatie.pdb
+bin/Debug/netcoreapp3.1/Applicatie.runtimeconfig.dev.json
+obj/Applicatie.csproj.nuget.dgspec.json
+obj/Applicatie.csproj.nuget.g.props
+obj/Debug/netcoreapp3.1/Applicatie.assets.cache
+obj/Debug/netcoreapp3.1/Applicatie.csproj.FileListAbsolute.txt
+obj/Debug/netcoreapp3.1/Applicatie.csprojAssemblyReference.cache
+obj/Debug/netcoreapp3.1/Applicatie.dll
+obj/Debug/netcoreapp3.1/Applicatie.pdb
+obj/project.assets.json
