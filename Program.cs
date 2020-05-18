@@ -60,7 +60,7 @@ namespace Applicatie
                         break;
                     case "4":
                         Console.Clear();
-                        Infomation.showinfo();
+                        Information.showinfo();
                         AnythingToContinue();
                         break;
                     case "-":

@@ -8,30 +8,34 @@ namespace Applicatie
     {
         public static void showinfo()
         {
-            // hier komen alle details over ons bedrijf
-            string companyName = "420 Inch Spacebarz";
-            string companyInfo = "We make Escape Rooms for everyone who enjoys puzzling and problem solving!";
-            string twitterInfo = "@420inchspacebarz";
-            string facebookInfo = "420 Inch Spacebarz";
-            string emailInfo = "420inchspacebarz@hotmail.com";
-            string phoneNum = "0612345678";
-            string location = "Wijnhaven 107  3011 WN";
+            var information = JsonManager.GetData<InformationItems>("InfoPage", "information");
 
             // hier wordt alles geprint naar console
             Console.WriteLine("======================================" +
             "\nAlle informatie over het bedrijf: \n\n" +
-            $"{companyName}\n" +
-            $"{companyInfo}\n\n" + 
+            $"{information.companyName}\n" +
+            $"{information.companyInfo}\n\n" +
             "if you have a question, you can always contact us through:\n" +
-            $"Twitter: {twitterInfo}\n" +
-            $"Facebook: {facebookInfo}\n" +
-            $"E-mail: {emailInfo}\n" +
-            $"Phone number: {phoneNum}\n" +
-            $"Location: {location}\n" +
-            "======================================\n" +
-            "Please press enter to return to the menu"
+            $"Twitter: {information.twitterInfo}\n" +
+            $"Facebook: {information.facebookInfo}\n" +
+            $"E-mail: {information.emailInfo}\n" +
+            $"Phone number: {information.phoneNum}\n" +
+            $"Location: {information.location}\n" +
+            "======================================\n"
             );
         }
+
+    }
+
+    class InformationItems
+    {
+        public string companyName { get; set; }
+        public string companyInfo { get; set; }
+        public string twitterInfo { get; set; }
+        public string facebookInfo { get; set; }
+        public string emailInfo { get; set; }
+        public string phoneNum { get; set; }
+        public string location { get; set; }
 
     }
 }
