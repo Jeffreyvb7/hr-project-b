@@ -30,7 +30,7 @@ namespace Applicatie
                 Console.Write(
                     "\n\nChoose an option from the following list:\n" +
                     "\t1 - Show current escape rooms\n" +
-                    "\t2 - Show Menu\n" +
+                    "\t2 - Show Food Menu\n" +
                     "\t3 - Book a escape room\n" +
                     "\t4 - Information about our company\n" +
                     "\t- - Admin options (Employees only!)\n" +
@@ -97,25 +97,25 @@ namespace Applicatie
                     case "1":
                         Console.Clear();
                         EscapeRoomController.ShowRooms();
-                        AnythingToContinue();
+                        PressEnterToContinue();
                         break;
 
                     case "2":
                         Console.Clear();
                         EscapeRoomController.CreateRoom();
-                        AnythingToContinue();
+                        PressEnterToContinue();
                         break;
 
                     case "3":
                         Console.Clear();
                         EscapeRoomController.EditRoom();
-                        AnythingToContinue();
+                        PressEnterToContinue();
                         break;
 
                     case "4":
                         Console.Clear();
                         EscapeRoomController.DeleteRoom();
-                        AnythingToContinue();
+                        PressEnterToContinue();
                         break;
 
                     case "5":
@@ -126,9 +126,9 @@ namespace Applicatie
             }
         }
 
-        static void AnythingToContinue()
+        static void PressEnterToContinue()
         {
-            Console.Write("\nPress anything to continu...");
+            Console.Write("\nPress Enter to continu...");
             Console.ReadLine();
         }
     }
