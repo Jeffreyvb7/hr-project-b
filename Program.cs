@@ -33,7 +33,7 @@ namespace Applicatie
                     "\t2 - Show Menu\n" +
                     "\t3 - Book a escape room\n" +
                     "\t4 - Information about our company\n" +
-                    "\t- - Escape room options (Employees only!)\n" +
+                    "\t- - Admin options (Employees only!)\n" +
                     "\t= - Exit\n" +
                     "Your option? "
                 );
@@ -60,7 +60,7 @@ namespace Applicatie
                         break;
                     case "4":
                         Console.Clear();
-                        Infomation.showinfo();
+                        Information.showinfo();
                         AnythingToContinue();
                         break;
                     case "-":
@@ -80,11 +80,12 @@ namespace Applicatie
             {
                 Console.Clear();
                 Console.Write(
-                    "\n\nEscape room options:\n" +
+                    "\n\nAdmin options:\n" +
                     "\t1 - Show list of escape rooms\n" +
                     "\t2 - Add escape room\n" +
                     "\t3 - Edit escape room\n" +
                     "\t4 - Remove escape room\n" +
+                    "\t5 = Edit information panel\n" +
                     "\t= - Back\n" +
                     "Your option? "
                 );
@@ -115,6 +116,11 @@ namespace Applicatie
                         Console.Clear();
                         EscapeRoomController.DeleteRoom();
                         AnythingToContinue();
+                        break;
+
+                    case "5":
+                        Console.Clear();
+                        Information.EditInfo();
                         break;
                 }
             }
