@@ -57,25 +57,25 @@ namespace Applicatie
                 {
                     case "1":
                         EditInfoJson(information, "companyName");
-                        break;
+                        return;
                     case "2":
                         EditInfoJson(information, "companyInfo");
-                        break;
+                        return;
                     case "3":
                         EditInfoJson(information, "twitterInfo");
-                        break;
+                        return;
                     case "4":
                         EditInfoJson(information, "facebookInfo");
-                        break;
+                        return;
                     case "5":
                         EditInfoJson(information, "emailInfo");
-                        break;
+                        return;
                     case "6":
                         EditInfoJson(information, "phoneNum");
-                        break;
+                        return;
                     case "7":
                         EditInfoJson(information, "location");
-                        break;
+                        return;
                     case "=":
                         return;
                     default:

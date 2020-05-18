@@ -17,7 +17,7 @@ namespace Applicatie
             
             Console.Clear();
             login.LoginMenu();
-            AnythingToContinue();
+            PressEnterToContinueInConsole();
             Menu();
         }
 
@@ -46,22 +46,22 @@ namespace Applicatie
                     case "1":
                         Console.Clear();
                         EscapeRoomController.ShowRooms();
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
                         break;
                     case "2":
                         Console.Clear();
                         Menuscherm.FoodDrinkMenu();
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
                         break;
                     case "3":
                         Console.Clear();
                         EscapeRoomReservation.Menu();;
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
                         break;
                     case "4":
                         Console.Clear();
                         Information.showinfo();
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
                         break;
                     case "-":
                         Console.Clear();
@@ -97,25 +97,25 @@ namespace Applicatie
                     case "1":
                         Console.Clear();
                         EscapeRoomController.ShowRooms();
-                        PressEnterToContinue();
+                        PressEnterToContinueInConsole();
                         break;
 
                     case "2":
                         Console.Clear();
                         EscapeRoomController.CreateRoom();
-                        PressEnterToContinue();
+                        PressEnterToContinueInConsole();
                         break;
 
                     case "3":
                         Console.Clear();
                         EscapeRoomController.EditRoom();
-                        PressEnterToContinue();
+                        PressEnterToContinueInConsole();
                         break;
 
                     case "4":
                         Console.Clear();
                         EscapeRoomController.DeleteRoom();
-                        PressEnterToContinue();
+                        PressEnterToContinueInConsole();
                         break;
 
                     case "5":
@@ -126,7 +126,7 @@ namespace Applicatie
             }
         }
 
-        static void PressEnterToContinue()
+        static void PressEnterToContinueInConsole()
         {
             Console.Write("\nPress Enter to continu...");
             Console.ReadLine();
