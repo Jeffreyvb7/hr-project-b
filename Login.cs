@@ -6,6 +6,7 @@ namespace Applicatie
     class Login 
     {
         public string path = Directory.GetCurrentDirectory();
+        public bool loggedIn = false;
         
         public void StartLogin() 
         {  
@@ -59,6 +60,15 @@ namespace Applicatie
                 if ((enteredUsername == username && enteredPassword == password) || (enteredUsername == "admin" && enteredPassword == "admin")) 
                 { 
                     Console.WriteLine("Login success");
+<<<<<<< Updated upstream
+=======
+                    loggedIn = true;
+                }
+                else
+                {
+                    Console.WriteLine("Login failed");
+                    Console.WriteLine("Back to login menu");
+>>>>>>> Stashed changes
                     Console.ReadLine();
                     Program.Menu();
                 }

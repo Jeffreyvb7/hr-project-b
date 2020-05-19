@@ -8,7 +8,7 @@ namespace Applicatie
     {
         static void Main(string[] args)
         {
-            LoggingIn();
+            Menu();
         }
 
         static void  LogginIn()
@@ -62,6 +62,7 @@ namespace Applicatie
                         AnythingToContinue();
                         break;
                     case "-":
+                        LoggingIn();
                         Console.Clear();
                         EscapeRoomMenu();
                         break;
