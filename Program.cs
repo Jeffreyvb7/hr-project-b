@@ -50,7 +50,7 @@ namespace Applicatie
                         break;
                     case "2":
                         Console.Clear();
-                        Menuscherm.FoodDrinkMenu();
+                        FoodsMenu.DisplayMenu();
                         PressEnterToContinueInConsole();
                         break;
                     case "3":
@@ -85,7 +85,8 @@ namespace Applicatie
                     "\t2 - Add escape room\n" +
                     "\t3 - Edit escape room\n" +
                     "\t4 - Remove escape room\n" +
-                    "\t5 = Edit information panel\n" +
+                    "\t5 - Edit information panel\n" +
+                    "\t6 - Manage foods and beverages\n" +
                     "\t= - Back\n" +
                     "Your option? "
                 );
@@ -122,11 +123,16 @@ namespace Applicatie
                         Console.Clear();
                         Information.EditInfo();
                         break;
+
+                    case "6":
+                        Console.Clear();
+                        FoodsMenu.MenuForFoodsMenu();
+                        break;
                 }
             }
         }
 
-        static void PressEnterToContinueInConsole()
+        public static void PressEnterToContinueInConsole()
         {
             Console.Write("\nPress Enter to continu...");
             Console.ReadLine();

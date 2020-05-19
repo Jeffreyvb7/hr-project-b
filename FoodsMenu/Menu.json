@@ -1,0 +1,16 @@
+{
+  "Foods": [
+    "Taart           - 5.99",
+    "Kaasplank       - 7.99",
+    "Snicker         - 0.99",
+    "Koek            - 0.75",
+    "Chips           - 1.25"
+  ],
+  "Beverages": [
+    "Water          - 0.00",
+    "Orange Juice   - 2.00",
+    "Soda           - 2.00",
+    "Beer           - 4.00",
+    "Redbull         - 4.99"
+  ]
+}
