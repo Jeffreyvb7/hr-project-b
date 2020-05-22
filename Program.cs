@@ -17,7 +17,7 @@ namespace Applicatie
             
             Console.Clear();
             login.LoginMenu();
-            AnythingToContinue();
+            PressEnterToContinueInConsole();
             Menu();
         }
 
@@ -30,10 +30,10 @@ namespace Applicatie
                 Console.Write(
                     "\n\nChoose an option from the following list:\n" +
                     "\t1 - Show current escape rooms\n" +
-                    "\t2 - Show Menu\n" +
+                    "\t2 - Show Food Menu\n" +
                     "\t3 - Book a escape room\n" +
                     "\t4 - Information about our company\n" +
-                    "\t- - Escape room options (Employees only!)\n" +
+                    "\t- - Admin options (Employees only!)\n" +
                     "\t= - Exit\n" +
                     "Your option? "
                 );
@@ -46,22 +46,22 @@ namespace Applicatie
                     case "1":
                         Console.Clear();
                         EscapeRoomController.ShowRooms();
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
                         break;
                     case "2":
                         Console.Clear();
-                        Menuscherm.FoodDrinkMenu();
-                        AnythingToContinue();
+                        FoodsMenu.DisplayMenu();
+                        PressEnterToContinueInConsole();
                         break;
                     case "3":
                         Console.Clear();
                         EscapeRoomReservation.Menu();;
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
                         break;
                     case "4":
                         Console.Clear();
-                        Infomation.showinfo();
-                        AnythingToContinue();
+                        Information.showinfo();
+                        PressEnterToContinueInConsole();
                         break;
                     case "-":
                         Console.Clear();
@@ -80,11 +80,13 @@ namespace Applicatie
             {
                 Console.Clear();
                 Console.Write(
-                    "\n\nEscape room options:\n" +
+                    "\n\nAdmin options:\n" +
                     "\t1 - Show list of escape rooms\n" +
                     "\t2 - Add escape room\n" +
                     "\t3 - Edit escape room\n" +
                     "\t4 - Remove escape room\n" +
+                    "\t5 - Edit information panel\n" +
+                    "\t6 - Manage foods and beverages\n" +
                     "\t= - Back\n" +
                     "Your option? "
                 );
@@ -96,33 +98,43 @@ namespace Applicatie
                     case "1":
                         Console.Clear();
                         EscapeRoomController.ShowRooms();
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
                         break;
 
                     case "2":
                         Console.Clear();
                         EscapeRoomController.CreateRoom();
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
                         break;
 
                     case "3":
                         Console.Clear();
                         EscapeRoomController.EditRoom();
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
                         break;
 
                     case "4":
                         Console.Clear();
                         EscapeRoomController.DeleteRoom();
-                        AnythingToContinue();
+                        PressEnterToContinueInConsole();
+                        break;
+
+                    case "5":
+                        Console.Clear();
+                        Information.EditInfo();
+                        break;
+
+                    case "6":
+                        Console.Clear();
+                        FoodsMenu.MenuForFoodsMenu();
                         break;
                 }
             }
         }
 
-        static void AnythingToContinue()
+        public static void PressEnterToContinueInConsole()
         {
-            Console.Write("\nPress anything to continu...");
+            Console.Write("\nPress Enter to continu...");
             Console.ReadLine();
         }
     }
