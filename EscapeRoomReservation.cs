@@ -16,7 +16,7 @@ namespace Applicatie{
             if (!File.Exists(AJsonable.GetPath("Calender", "Calender"))) {
                 for (int i = 0; i < AJsonable.GetAll<EscapeRoom>("EscapeRooms").Count; i++) {
                 var rooms = AJsonable.GetAll<EscapeRoom>("EscapeRooms");
-                var cal = new Calender(rooms[i].Name, rooms[i]);
+                var cal = new Calender(rooms[i].ID);
                 listOfCalenders.Add(cal);
                 }
                 JsonManager.SaveData<List<Calender>>(listOfCalenders, "Calender", "Calender");
@@ -35,13 +35,23 @@ namespace Applicatie{
 
         }
 
+        public static string getNameFromID(string ID) {
+            var rooms = AJsonable.GetAll<EscapeRoom>("EscapeRooms");
+            for (int i = 0; i < rooms.Count; i++) {
+                if (rooms[i].ID == ID) {
+                    return rooms[i].Name;
+                }
+                }
+            return null;
+            }
+
+
         public static void checkBookings(List<Calender> list) {
             int dag = MenuOptions("How many days from now are we checking?", 31, 0);
             for (int roomIndex = 0; roomIndex < list.Count; roomIndex ++) {
                 Console.WriteLine(".");
-                Console.WriteLine("Room " + list[roomIndex].roomName + "\n\n");
+                Console.WriteLine("Room " + getNameFromID(list[roomIndex].roomID) + "\n\n");
                 list[roomIndex].calender[dag].showSchedule();
-
             }
 
             
@@ -53,7 +63,7 @@ namespace Applicatie{
             while (true) {
                 var room = RoomPicker();
                 for (int i = 0; i < list.Count; i++) {
-                        if (list[i].room == room) {
+                        if (list[i].roomID == room.ID) {
                             roomIndex = i;
                         }
                     }
@@ -84,7 +94,7 @@ namespace Applicatie{
 
                 if (MenuOptions("1. Yes\n2. No", 2) == 1) {
 
-                    var boeking = new Booking(numPlayers, hoeLaat, room, lastName, telephone, dag, endTime, setupTime);
+                    var boeking = new Booking(numPlayers, hoeLaat, room.ID, lastName, telephone, dag, endTime, setupTime);
                     if (list[roomIndex].calender[dag].addBooking(boeking) == true) {
                         JsonManager.SaveData<List<Calender>>(list, "Calender", "Calender");
                         Console.Clear();
@@ -194,16 +204,16 @@ namespace Applicatie{
     class Booking {
         public int numPlayers;
         public int time;
-        public EscapeRoom room;
+        public string roomID;
         public string lastName;
         public string phoneNumber;
         public int EndTime;
         public int SetupTime;
         public int day;
 
-        public Booking(int numPlayers, int time, EscapeRoom EscapeRoom, string lastName, string phoneNumber, int day, int endTime, int setupTime) {
+        public Booking(int numPlayers, int time, string roomID, string lastName, string phoneNumber, int day, int endTime, int setupTime) {
             this.numPlayers = numPlayers;
-            this.room = EscapeRoom;
+            this.roomID = roomID;
             this.time = time;
             this.lastName = lastName;
             this.phoneNumber = phoneNumber;
@@ -218,12 +228,12 @@ namespace Applicatie{
     class DaySchedule {
         public bool filled;
         public List<Booking> schedule;
-        public EscapeRoom room;
+        public string roomID;
 
-        public DaySchedule(EscapeRoom room) {
+        public DaySchedule(string roomID) {
             this.filled = false;
             this.schedule = new List<Booking>();
-            this.room = room;
+            this.roomID = roomID;
         }
 
 
@@ -240,7 +250,7 @@ namespace Applicatie{
 
         public void showSchedule(){
             Console.Clear();
-            Console.WriteLine("Room: " + this.room.Name + "\nOn this day, we have " + this.schedule.Count + " reservations:\n");
+            Console.WriteLine("Room: " + EscapeRoomReservation.getNameFromID(this.roomID) + "\nOn this day, we have " + this.schedule.Count + " reservations:\n");
             for (int i = 0; i < this.schedule.Count; i++) {
                 Console.WriteLine("[" + i + "]:     " + EscapeRoomReservation.tijdAndersom(schedule[i].time) + " - " + EscapeRoomReservation.tijdAndersom(schedule[i].EndTime));
             }   
@@ -263,15 +273,13 @@ namespace Applicatie{
     class Calender {
         public int maxDays = 30;
         public DaySchedule[] calender;
-        public string roomName;
-        public EscapeRoom room;
+        public string roomID;
 
-        public Calender(string roomName, EscapeRoom room) {
+        public Calender(string roomID) {
             this.calender = new DaySchedule[this.maxDays];
-            this.roomName = roomName;
-            this.room = room;
+            this.roomID = roomID;
             for (int i = 0; i < maxDays; i++){
-                this.calender[i] = new DaySchedule(room);
+                this.calender[i] = new DaySchedule(roomID);
                 }
             }
         }
