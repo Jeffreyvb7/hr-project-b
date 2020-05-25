@@ -8,8 +8,8 @@ namespace Applicatie{
         public string roomID;
         public string lastName;
         public string phoneNumber;
-        public int EndTime;
-        public int SetupTime;
+        public int endTime;
+        public int setupTime;
         public int day;
 
         public Booking(int numPlayers, int time, string roomID, string lastName, string phoneNumber, int day, int endTime, int setupTime) {
@@ -18,8 +18,8 @@ namespace Applicatie{
             this.time = time;
             this.lastName = lastName;
             this.phoneNumber = phoneNumber;
-            this.EndTime = endTime;
-            this.SetupTime = setupTime;
+            this.endTime = endTime;
+            this.setupTime = setupTime;
             this.day = day;
         }
     }
