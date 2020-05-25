@@ -18,7 +18,7 @@ namespace Applicatie
             Console.Clear();
             login.LoginMenu();
             PressEnterToContinueInConsole();
-            Menu();
+            AdminMenu();
         }
 
         public static void Menu()
@@ -66,7 +66,6 @@ namespace Applicatie
                     case "-":
                         LoggingIn();
                         Console.Clear();
-                        EscapeRoomMenu();
                         break;
                     case "i":
                         Information.showinfo();
@@ -75,7 +74,7 @@ namespace Applicatie
                 }
             }
         }
-        static void EscapeRoomMenu()
+        static void AdminMenu()
         {
             while (true)
             {
