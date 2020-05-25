@@ -27,9 +27,9 @@ namespace Applicatie{
 
         public void showSchedule(){
             Console.Clear();
-            Console.WriteLine("Room: " + EscapeRoomReservation.getNameFromID(this.roomID) + "\nOn this day, we have " + this.schedule.Count + " reservations:\n");
+            Console.WriteLine("Room: " + EscapeRoomReservation.GetNameFromID(this.roomID) + "\nOn this day, we have " + this.schedule.Count + " reservations:\n");
             for (int i = 0; i < this.schedule.Count; i++) {
-                Console.WriteLine("[" + i + "]:     " + EscapeRoomReservation.tijdAndersom(schedule[i].time) + " - " + EscapeRoomReservation.tijdAndersom(schedule[i].EndTime));
+                Console.WriteLine("[" + i + "]:     " + EscapeRoomReservation.tijdAndersom(schedule[i].time) + " - " + EscapeRoomReservation.tijdAndersom(schedule[i].endTime));
             }   
                 Console.WriteLine("\nPress anthing to continue...");
                 Console.ReadLine();
@@ -37,7 +37,7 @@ namespace Applicatie{
 
         //Checkt of er overlap is tussen de tijden van de twee boekingen
         public bool Overlap(Booking booking, Booking booking2){
-            if (booking.SetupTime >= booking2.SetupTime && booking.SetupTime <= booking2.EndTime) {
+            if (booking.setupTime >= booking2.setupTime && booking.setupTime<= booking2.endTime) {
                 return true;
             }
             else{;

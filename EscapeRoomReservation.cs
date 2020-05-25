@@ -27,14 +27,14 @@ namespace Applicatie{
             if (option == "1"){
                 BookRoom(listOfCalenders);
             }  else if (option == "2") {
-                checkBookings(listOfCalenders);
+                CheckBookings(listOfCalenders);
             }
         }
 
-        public static string getNameFromID(string ID) {
+        public static string GetNameFromID(string idArg) {
             var rooms = AJsonable.GetAll<EscapeRoom>("EscapeRooms");
             for (int i = 0; i < rooms.Count; i++) {
-                if (rooms[i].ID == ID) {
+                if (rooms[i].ID == idArg) {
                     return rooms[i].Name;
                     }
                 }
@@ -42,11 +42,11 @@ namespace Applicatie{
             }
 
 
-        public static void checkBookings(List<Calender> list) {
+        public static void CheckBookings(List<Calender> list) {
             int dag = MenuOptions("How many days from now are we checking?", 31, 0);
             for (int roomIndex = 0; roomIndex < list.Count; roomIndex ++) {
                 Console.WriteLine(".");
-                Console.WriteLine("Room " + getNameFromID(list[roomIndex].roomID) + "\n\n");
+                Console.WriteLine("Room " + GetNameFromID(list[roomIndex].roomID) + "\n\n");
                 list[roomIndex].calender[dag].showSchedule();
             }
         }
@@ -66,7 +66,7 @@ namespace Applicatie{
                 Console.Clear();
                 int dag = MenuOptions("How many days from now will you book?", 31, 0);
                 list[roomIndex].calender[dag].showSchedule();
-                int hoeLaat = tijd();
+                int hoeLaat = Tijd();
                 int endTime = room.MaxDuration + hoeLaat;
                 int setupTime = hoeLaat - room.SetupTime;
                 Console.Clear();
@@ -109,16 +109,16 @@ namespace Applicatie{
             var rooms = AJsonable.GetAll<EscapeRoom>("EscapeRooms");
             while (true){
                 EscapeRoomController.ShowRooms();
-                int x = MenuOptions("Pick the number of the room you want to choose\n", rooms.Count-1);
+                int pickedRoomNumber = MenuOptions("Pick the number of the room you want to choose\n", rooms.Count-1);
                 Console.Clear();
                 Thread.Sleep(1000);
                 Console.WriteLine("You picked the following room:\n");
-                Console.WriteLine(rooms[x]);
+                Console.WriteLine(rooms[pickedRoomNumber]);
                 Console.WriteLine("\n");
                 Thread.Sleep(1000);
                 Console.WriteLine("Is your choice correct?");
                 if (MenuOptions("\n\n1. Yes\n2.No", 2) == 1) {
-                    return rooms[x];
+                    return rooms[pickedRoomNumber];
                 }
         }
     }
@@ -126,13 +126,13 @@ namespace Applicatie{
         //Pakt een string als instructie. Returnt het menu item.
         public static int MenuOptions(string text, int range, int minRange = 0) {
             string answer;
-            int x;
+            int pickedOption;
             while (true) {
                 Console.WriteLine(text);
                 answer = Console.ReadLine();
                 try
                 {
-                    x = int.Parse(answer);
+                    pickedOption = int.Parse(answer);
                 }
                 catch {
                     Console.WriteLine("\nInvalid input, try again\n");
@@ -140,29 +140,29 @@ namespace Applicatie{
                     Console.Clear();
                     continue;
                 }
-                if (x > range || x < minRange) {
+                if (pickedOption > range || pickedOption < minRange) {
                     Console.WriteLine("\nInvalid option. Try again\n");
                     Thread.Sleep(1000);
                 } else {
-                    return x;
+                    return pickedOption;
                 }
             }
         }
         
         //Pakt de hoeveelheid spelers
-        public static int NumberOfPlayers(int MaxPlayers){
-            int x;
-            x = MenuOptions("How many players will you bring along?\n", MaxPlayers+1);
-            return x;           
+        public static int NumberOfPlayers(int maxPlayers){
+            int amountOfPlayers;
+            amountOfPlayers = MenuOptions("How many players will you bring along?\n", maxPlayers+1);
+            return amountOfPlayers;           
         }
 
         //Pakt de tijd van een gebruiker en convert dit tot minuten
-        public static int tijd(){
-            int x;
-            int y;
-            x = MenuOptions("Within two steps you will specify the hour and minute on which you'd like to reserve\n\nPlease specify at which hour you want (9:00-17:00)", 16, 9);
-            y = MenuOptions("Now please specify at which minute", 59, 0);
-            return TijdConverter(x, y);
+        public static int Tijd(){
+            int hour;
+            int min;
+            hour = MenuOptions("Within two steps you will specify the hour and minute on which you'd like to reserve\n\nPlease specify at which hour you want (9:00-17:00)", 16, 9);
+            min = MenuOptions("Now please specify at which minute", 59, 0);
+            return TijdConverter(hour, min);
         }
         //wordt gebruikt in de tijd functie om een aantal minuten te returnen
         public static int TijdConverter(int h, int m){
