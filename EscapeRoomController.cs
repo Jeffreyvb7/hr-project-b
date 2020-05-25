@@ -63,6 +63,7 @@ namespace Applicatie
         {
             // Vergeet hier je controles niet op!
             Console.WriteLine("Creating new room: ");
+            string id = Guid.NewGuid().ToString("N"); 
             string name = AskQuestion("Enter name: ", required: true);
             string theme = AskQuestion("Enter theme: ", required: true);
             int maxPlayers = int.Parse(AskQuestion("Enter max amount of players: ", isInt: true));
@@ -72,6 +73,7 @@ namespace Applicatie
 
             var newRoom = new EscapeRoom()
             {
+                ID = id,
                 Name = name,
                 Theme = theme,
                 Price = price,
@@ -99,7 +101,6 @@ namespace Applicatie
                 string roomName = Console.ReadLine();
                 string roomNamePath = AJsonable.GetPath("EscapeRooms", roomName);
                 bool escapeRoomExists = File.Exists(roomNamePath);
-                Console.WriteLine(escapeRoomExists);
 
                 if (String.IsNullOrEmpty(roomName))
                 {
@@ -113,23 +114,22 @@ namespace Applicatie
                 else if (escapeRoomExists)
                 {
                     var room = AJsonable.Get<EscapeRoom>("EscapeRooms", roomName);
-
-                    string name = AskQuestion($"(current = {room.Name}) Enter new name: ");
-                    string theme = AskQuestion($"(current = {room.Theme}) Enter new theme: ");
+                    
+                    string name = AskQuestion($"(current = {room.Name}) Enter new name: ", required: true);
+                    string theme = AskQuestion($"(current = {room.Theme}) Enter new theme: ", required: true);
+                    int price = Int32.Parse(AskQuestion($"(current = {room.Price}) Enter new price: ", isInt: true));
                     int maxPlayers = Int32.Parse(AskQuestion($"(current = {room.MaxPlayers}) Enter new max amount of players: ", isInt: true));
-                    int maxDuration = Int32.Parse(AskQuestion($"(current = {room.MaxDuration}) Enter new max duration: ", isInt: true));
-                    int setupTime = Int32.Parse(AskQuestion($"(current = {room.SetupTime}) Enter new setup time: ", isInt: true));
-                    float price = float.Parse(AskQuestion($"(current = {room.Price}) Enter new total price: ", isFloat: true));
 
                     EscapeRoom.Delete<EscapeRoom>("EscapeRooms", roomName);
                     var newRoom = new EscapeRoom()
                     {
+                        ID = room.ID,
                         Name = name,
                         Theme = theme,
                         Price = price,
                         MaxPlayers = maxPlayers,
-                        MaxDuration = maxDuration,
-                        SetupTime = setupTime
+                        MaxDuration = room.MaxDuration,
+                        SetupTime = room.SetupTime
                     };
 
                     newRoom.Save();
@@ -139,6 +139,7 @@ namespace Applicatie
                 }
             }
         }
+
         public static void DeleteRoom()
         {
             Console.WriteLine("Deleting room: ");
