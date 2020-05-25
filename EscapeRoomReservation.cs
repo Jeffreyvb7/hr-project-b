@@ -46,8 +46,8 @@ namespace Applicatie{
             int dag = MenuOptions("How many days from now are we checking?", 31, 0);
             for (int roomIndex = 0; roomIndex < list.Count; roomIndex ++) {
                 Console.WriteLine(".");
-                Console.WriteLine("Room " + GetNameFromID(list[roomIndex].roomID) + "\n\n");
-                list[roomIndex].calender[dag].showSchedule();
+                Console.WriteLine("Room " + GetNameFromID(list[roomIndex].RoomID) + "\n\n");
+                list[roomIndex].DayCalender[dag].ShowSchedule();
             }
         }
 
@@ -57,7 +57,7 @@ namespace Applicatie{
             while (true) {
                 var room = RoomPicker();
                 for (int i = 0; i < list.Count; i++) {
-                        if (list[i].roomID == room.ID) {
+                        if (list[i].RoomID == room.ID) {
                             roomIndex = i;
                         }
                     }
@@ -65,7 +65,7 @@ namespace Applicatie{
                 int numPlayers = NumberOfPlayers(room.MaxPlayers);
                 Console.Clear();
                 int dag = MenuOptions("How many days from now will you book?", 31, 0);
-                list[roomIndex].calender[dag].showSchedule();
+                list[roomIndex].DayCalender[dag].ShowSchedule();
                 int hoeLaat = Tijd();
                 int endTime = room.MaxDuration + hoeLaat;
                 int setupTime = hoeLaat - room.SetupTime;
@@ -78,14 +78,14 @@ namespace Applicatie{
                 Console.Clear();
                 Console.WriteLine("Is the following info correct?\n\n" +
                 "Name: " + lastName + "\nTelephone: " + telephone +
-                "\nTime: " + tijdAndersom(hoeLaat) +
+                "\nTime: " + TijdAndersom(hoeLaat) +
                 "\nRoom: " + room.Name +
                 "\nDays from now: " + dag +
                 "\nHow many people: " + numPlayers);
 
                 if (MenuOptions("1. Yes\n2. No", 2) == 1) {
                     var boeking = new Booking(numPlayers, hoeLaat, room.ID, lastName, telephone, dag, endTime, setupTime);
-                    if (list[roomIndex].calender[dag].addBooking(boeking) == true) {
+                    if (list[roomIndex].DayCalender[dag].AddBooking(boeking) == true) {
                         JsonManager.SaveData<List<Calender>>(list, "Calender", "Calender");
                         Console.Clear();
                         Console.WriteLine("Booking Placed!\n");
@@ -170,7 +170,7 @@ namespace Applicatie{
             }
 
         //wordt gebruikt om tijd in minuten aan de gebruiker te presenteren.
-        public static string tijdAndersom(int tijd){
+        public static string TijdAndersom(int tijd){
             string tijdString = "";
             int uren = tijd / 60;
             int minuten = tijd % 60;
