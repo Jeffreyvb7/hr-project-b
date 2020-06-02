@@ -48,15 +48,11 @@ namespace Escape_Room
             About about = new About();
             about.Show();
         }
-
-        if(adminAcess)
+        private void AdminOptions_Click(object sender, EventArgs e)
         {
-            private void AdminOptions_Click(object sender, EventArgs e)
-            {
-                this.Hide();
-                About about = new About();
-                about.Show();
-            }
+        this.Hide();
+        About about = new About();
+        about.Show();
         }
     } 
 }

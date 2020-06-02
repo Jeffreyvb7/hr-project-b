@@ -12,7 +12,7 @@ namespace Escape_Room
 {
     public partial class Login : Form
     {
-        public bool loginBool = false;
+        public bool loginBool = true;
         public Login()
         {
             InitializeComponent();
