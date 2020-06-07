@@ -8,8 +8,6 @@ namespace Applicatie{
 
     //Menu
     class EscapeRoomReservation {
-        
-
         public static void Menu(){
             List<Calender> listOfCalenders = new List<Calender>();
             //Kijkt of het bestand 'calender' bestaat, als dat niet zo is maakt hij deze aan
@@ -31,8 +29,6 @@ namespace Applicatie{
             }  else if (option == "2") {
                 checkBookings(listOfCalenders);
             }
-
-
         }
 
         public static string getNameFromID(string ID) {
@@ -40,7 +36,7 @@ namespace Applicatie{
             for (int i = 0; i < rooms.Count; i++) {
                 if (rooms[i].ID == ID) {
                     return rooms[i].Name;
-                }
+                    }
                 }
             return null;
             }
@@ -53,8 +49,6 @@ namespace Applicatie{
                 Console.WriteLine("Room " + getNameFromID(list[roomIndex].roomID) + "\n\n");
                 list[roomIndex].calender[dag].showSchedule();
             }
-
-            
         }
 
         public static void BookRoom(List<Calender> chosenList){
@@ -70,13 +64,11 @@ namespace Applicatie{
                 Console.Clear();
                 int numPlayers = NumberOfPlayers(room.MaxPlayers);
                 Console.Clear();
-
                 int dag = MenuOptions("How many days from now will you book?", 31, 0);
                 list[roomIndex].calender[dag].showSchedule();
                 int hoeLaat = tijd();
                 int endTime = room.MaxDuration + hoeLaat;
                 int setupTime = hoeLaat - room.SetupTime;
-
                 Console.Clear();
                 Console.WriteLine("What's your last name?");
                 string lastName = Console.ReadLine();  
@@ -84,7 +76,6 @@ namespace Applicatie{
                 Console.WriteLine("What's your telephone number?");
                 string telephone = Console.ReadLine(); 
                 Console.Clear();
-
                 Console.WriteLine("Is the following info correct?\n\n" +
                 "Name: " + lastName + "\nTelephone: " + telephone +
                 "\nTime: " + tijdAndersom(hoeLaat) +
@@ -93,7 +84,6 @@ namespace Applicatie{
                 "\nHow many people: " + numPlayers);
 
                 if (MenuOptions("1. Yes\n2. No", 2) == 1) {
-
                     var boeking = new Booking(numPlayers, hoeLaat, room.ID, lastName, telephone, dag, endTime, setupTime);
                     if (list[roomIndex].calender[dag].addBooking(boeking) == true) {
                         JsonManager.SaveData<List<Calender>>(list, "Calender", "Calender");
@@ -114,8 +104,6 @@ namespace Applicatie{
         }
     }
 
-
-
         //Functie die alle escaperooms uitprint, en vervolgens jouw de keus geeft om er een te kiezen
         public static EscapeRoom RoomPicker(){
             var rooms = AJsonable.GetAll<EscapeRoom>("EscapeRooms");
@@ -135,15 +123,12 @@ namespace Applicatie{
         }
     }
 
-
-
         //Pakt een string als instructie. Returnt het menu item.
         public static int MenuOptions(string text, int range, int minRange = 0) {
             string answer;
             int x;
             while (true) {
                 Console.WriteLine(text);
-
                 answer = Console.ReadLine();
                 try
                 {
@@ -155,7 +140,6 @@ namespace Applicatie{
                     Console.Clear();
                     continue;
                 }
-
                 if (x > range || x < minRange) {
                     Console.WriteLine("\nInvalid option. Try again\n");
                     Thread.Sleep(1000);
@@ -196,91 +180,6 @@ namespace Applicatie{
                 tijdString = tijdString + uren + ":" + minuten;
             }
             return tijdString;
-            }
-        }
-
-
-    //class voor één boeking
-    class Booking {
-        public int numPlayers;
-        public int time;
-        public string roomID;
-        public string lastName;
-        public string phoneNumber;
-        public int EndTime;
-        public int SetupTime;
-        public int day;
-
-        public Booking(int numPlayers, int time, string roomID, string lastName, string phoneNumber, int day, int endTime, int setupTime) {
-            this.numPlayers = numPlayers;
-            this.roomID = roomID;
-            this.time = time;
-            this.lastName = lastName;
-            this.phoneNumber = phoneNumber;
-            this.EndTime = endTime;
-            this.SetupTime = setupTime;
-            this.day = day;
-        }
-    }
-
-
-    //Class voor de dagplanning van één kamer
-    class DaySchedule {
-        public bool filled;
-        public List<Booking> schedule;
-        public string roomID;
-
-        public DaySchedule(string roomID) {
-            this.filled = false;
-            this.schedule = new List<Booking>();
-            this.roomID = roomID;
-        }
-
-
-        //Gaat eerst met een for loop het rijtje af om te kijken of er overlap is. Als dat niet is voegt hij hem toe.
-        public bool addBooking(Booking booking){
-            for (int i = 0; i < this.schedule.Count; i++){
-                if (Overlap(schedule[i], booking)){
-                    return false;
-                }
-            }
-            this.schedule.Add(booking);
-            return true;
-        }
-
-        public void showSchedule(){
-            Console.Clear();
-            Console.WriteLine("Room: " + EscapeRoomReservation.getNameFromID(this.roomID) + "\nOn this day, we have " + this.schedule.Count + " reservations:\n");
-            for (int i = 0; i < this.schedule.Count; i++) {
-                Console.WriteLine("[" + i + "]:     " + EscapeRoomReservation.tijdAndersom(schedule[i].time) + " - " + EscapeRoomReservation.tijdAndersom(schedule[i].EndTime));
-            }   
-                Console.WriteLine("\nPress anthing to continue...");
-                Console.ReadLine();
-        }
-
-        //Checkt of er overlap is tussen de tijden van de twee boekingen
-        public bool Overlap(Booking booking, Booking booking2){
-            if (booking.SetupTime >= booking2.SetupTime && booking.SetupTime <= booking2.EndTime) {
-                return true;
-            }
-            else{;
-                return false;
-            }
-        }
-    }
-
-    //class voor 'x' aantal dagen calender op één kamer.
-    class Calender {
-        public int maxDays = 30;
-        public DaySchedule[] calender;
-        public string roomID;
-
-        public Calender(string roomID) {
-            this.calender = new DaySchedule[this.maxDays];
-            this.roomID = roomID;
-            for (int i = 0; i < maxDays; i++){
-                this.calender[i] = new DaySchedule(roomID);
-                }
             }
         }
 }
