@@ -50,9 +50,16 @@ namespace Escape_Room
         }
         private void AdminOptions_Click(object sender, EventArgs e)
         {
-        this.Hide();
-        About about = new About();
-        about.Show();
+            this.Hide();
+            About about = new About();
+            about.Show();
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
         }
     } 
 }

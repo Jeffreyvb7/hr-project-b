@@ -29,8 +29,8 @@ namespace Escape_Room
             if (loginBool)
             {
                 this.Hide();
-                Home home = new Home();
-                home.Show();
+                AdminMenu adminmenu = new AdminMenu();
+                adminmenu.Show();
                 
             }
             lblError.Text = "Invalid username or password, please try again.";
