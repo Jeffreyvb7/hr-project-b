@@ -1,0 +1,9 @@
+{
+  "ID": "e3034adb7ae7447e9a03e0a35078f174",
+  "Name": "Moordmysterie in de bioscoop",
+  "Theme": "Mysterie",
+  "Price": 55.0,
+  "MaxPlayers": 8,
+  "MaxDuration": 60,
+  "SetupTime": 20
+}
