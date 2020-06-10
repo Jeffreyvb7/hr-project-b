@@ -1,9 +1,0 @@
-{
-  "ID": "efd22744e29741eb9b2c00c8adb3ab25",
-  "Name": "Test Room",
-  "Theme": "Test Theme",
-  "Price": 70.0,
-  "MaxPlayers": 4,
-  "MaxDuration": 120,
-  "SetupTime": 20
-}

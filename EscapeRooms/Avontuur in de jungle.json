@@ -1,0 +1,9 @@
+{
+  "ID": "7f3dfaaa369742ff87a0e21b634efb74",
+  "Name": "Avontuur in de jungle",
+  "Theme": "Avontuurlijk",
+  "Price": 70.0,
+  "MaxPlayers": 5,
+  "MaxDuration": 45,
+  "SetupTime": 10
+}
