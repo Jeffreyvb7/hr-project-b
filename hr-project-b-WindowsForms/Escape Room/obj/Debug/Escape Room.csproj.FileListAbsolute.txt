@@ -1,0 +1,22 @@
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\bin\Debug\Escape Room.exe.config
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\bin\Debug\Escape Room.exe
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\bin\Debug\Escape Room.pdb
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.About.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.Booking.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.EscapeRooms.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.FoodDrink.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.Home.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.Login.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.Properties.Resources.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.Register.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape Room.csproj.GenerateResource.cache
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape Room.csproj.CoreCompileInputs.cache
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape Room.exe
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape Room.pdb
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.AdminMenu.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape Room.csprojAssemblyReference.cache
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.EditAbout.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.EditRooms.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.ManageFoodMenu.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.RemoveRooms.resources
+C:\Users\blockycow\Downloads\project b\windows forms\hr-project-b-WindowsForms\Escape Room\obj\Debug\Escape_Room.AddRoom.resources
