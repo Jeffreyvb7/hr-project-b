@@ -44,31 +44,30 @@ namespace Applicatie
             enteredUsername = Console.ReadLine();
             Console.Write("Enter password: ");
             enteredPassword = Console.ReadLine();
-            if (!File.Exists(path +"\\users\\" + enteredUsername + ".txt"))
+            if(!(enteredUsername == "admin" && enteredPassword == "admin"))
             {
-                Console.WriteLine("Login failed");
-                Console.ReadLine();
-                LogIn();   
-            }
-            else
-            {
-                using (StreamReader ReadUser = new StreamReader(File.Open(path +"\\users\\" + enteredUsername + ".txt", FileMode.Open))) {
+                if (!File.Exists(path +"\\Users\\" + enteredUsername + ".txt"))
+                {
+                    Console.WriteLine("Login failed");
+                    Console.WriteLine("Back to login menu");
+                    Console.ReadLine();
+                    LogIn();   
+                }
+                using (StreamReader ReadUser = new StreamReader(File.Open(path +"\\users\\" + enteredUsername + ".txt", FileMode.Open))) 
+                {
                     username = ReadUser.ReadLine();
                     password = ReadUser.ReadLine();
                     ReadUser.Close();
-            }
-                if ((enteredUsername == username && enteredPassword == password) || (enteredUsername == "admin" && enteredPassword == "admin")) 
-                { 
-                    Console.WriteLine("Login success");
                 }
-                else
-                {
+                if (!(enteredUsername == username && enteredPassword == password)) 
+                { 
                     Console.WriteLine("Login failed");
                     Console.WriteLine("Back to login menu");
                     Console.ReadLine();
                     LoginMenu();
                 }
-            }         
+            }                
+            Console.WriteLine("Login success");         
         } 
 
         public void Register()
