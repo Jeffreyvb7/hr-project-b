@@ -10,7 +10,10 @@
 #CUSTOM IGNORE RULES
 Calender/*
 EscapeRooms/*
-!EscapeRooms/Test Room.json
+!EscapeRooms/Avontuur in de jungle.json
+!EscapeRooms/De grote ontsnapping.json
+!EscapeRooms/De jeugd van TV.json
+!EscapeRooms/Moordmysterie in de bioscoop.json
 bin
 obj
 
