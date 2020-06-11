@@ -60,16 +60,12 @@ namespace Applicatie
                         break;
                     case "4":
                         Console.Clear();
-                        Information.showinfo();
+                        Information.ShowInfo();
                         PressEnterToContinueInConsole();
                         break;
                     case "-":
                         LoggingIn();
                         Console.Clear();
-                        break;
-                    case "i":
-                        Information.showinfo();
-                        string enterskip = Console.ReadLine();
                         break;
                 }
             }
@@ -134,7 +130,7 @@ namespace Applicatie
 
         public static void PressEnterToContinueInConsole()
         {
-            Console.Write("\nPress Enter to continu...");
+            Console.Write("\nPress Enter to continue...");
             Console.ReadLine();
         }
     }

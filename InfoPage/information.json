@@ -1,9 +1,9 @@
 {
-  "companyName": "420 Inch Spacebarz",
-  "companyInfo": "We make Escape Rooms for everyone who enjoys puzzling and problem solving!",
-  "twitterInfo": "@420inchspacebarz",
-  "facebookInfo": "420 Inch Spacebarz",
-  "emailInfo": "420inchspacebarz@hotmail.com",
-  "phoneNum": "0612345678",
-  "location": "Wijnhaven 107  3011 WN"
+  "CompanyName": "420 Inch Spacebarz",
+  "CompanyInfo": "We make Escape Rooms for everyone who enjoys puzzling and problem solving!",
+  "TwitterInfo": "@420inchspacebarz",
+  "FacebookInfo": "420 Inch Spacebarz",
+  "EmailInfo": "420inchspacebarz@hotmail.com",
+  "PhoneNum": "0612345678",
+  "Location": "Wijnhaven 107  3011 WN"
 }

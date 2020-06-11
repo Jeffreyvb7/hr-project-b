@@ -7,29 +7,29 @@ namespace Applicatie
 {
     class Information
     {
-        public string companyName { get; set; }
-        public string companyInfo { get; set; }
-        public string twitterInfo { get; set; }
-        public string facebookInfo { get; set; }
-        public string emailInfo { get; set; }
-        public string phoneNum { get; set; }
-        public string location { get; set; }
+        public string CompanyName { get; set; }
+        public string CompanyInfo { get; set; }
+        public string TwitterInfo { get; set; }
+        public string FacebookInfo { get; set; }
+        public string EmailInfo { get; set; }
+        public string PhoneNum { get; set; }
+        public string Location { get; set; }
 
-        public static void showinfo()
+        public static void ShowInfo()
         {
             var information = JsonManager.GetData<Information>("InfoPage", "information");
 
             // hier wordt alles geprint naar console
             Console.WriteLine("======================================" +
             "\nAlle informatie over het bedrijf: \n\n" +
-            $"{information.companyName}\n" +
-            $"{information.companyInfo}\n\n" +
+            $"{information.CompanyName}\n" +
+            $"{information.CompanyInfo}\n\n" +
             "if you have a question, you can always contact us through:\n" +
-            $"Twitter: {information.twitterInfo}\n" +
-            $"Facebook: {information.facebookInfo}\n" +
-            $"E-mail: {information.emailInfo}\n" +
-            $"Phone number: {information.phoneNum}\n" +
-            $"Location: {information.location}\n" +
+            $"Twitter: {information.TwitterInfo}\n" +
+            $"Facebook: {information.FacebookInfo}\n" +
+            $"E-mail: {information.EmailInfo}\n" +
+            $"Phone number: {information.PhoneNum}\n" +
+            $"Location: {information.Location}\n" +
             "======================================\n"
             );
         }
@@ -56,25 +56,25 @@ namespace Applicatie
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        EditInfoJson(information, "companyName");
+                        EditInfoJson(information, "CompanyName");
                         return;
                     case "2":
-                        EditInfoJson(information, "companyInfo");
+                        EditInfoJson(information, "CompanyInfo");
                         return;
                     case "3":
-                        EditInfoJson(information, "twitterInfo");
+                        EditInfoJson(information, "TwitterInfo");
                         return;
                     case "4":
-                        EditInfoJson(information, "facebookInfo");
+                        EditInfoJson(information, "FacebookInfo");
                         return;
                     case "5":
-                        EditInfoJson(information, "emailInfo");
+                        EditInfoJson(information, "EmailInfo");
                         return;
                     case "6":
-                        EditInfoJson(information, "phoneNum");
+                        EditInfoJson(information, "PhoneNum");
                         return;
                     case "7":
-                        EditInfoJson(information, "location");
+                        EditInfoJson(information, "Location");
                         return;
                     case "=":
                         return;
